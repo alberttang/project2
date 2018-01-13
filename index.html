@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sensus/Pollit/Reckoning</title>
+
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<script src="js/carousel.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+	<div class="container">
+	  <div class="carousel">
+	    <div class="item a">Popular/Trending</div>
+	    <div class="item b">Entertainment</div>
+	    <div class="item c">
+	    	<p>Personal Questions</p>
+	    </div>
+	    <div class="item d">Preferences</div>
+	    <div class="item e">Politics</div>
+	    <div class="item f">World</div>
+	  </div>
+	</div>
+<div class="next">Next</div>
+<div class="prev">Prev</div>
+</div>
+<div class="next">Next</div>
+<div class="prev">Prev</div>
+
+<script type="text/javascript">
+	var carousel = $(".carousel"),
+    currdeg  = 0;
+
+$(".next").on("click", { d: "n" }, rotate);
+$(".prev").on("click", { d: "p" }, rotate);
+
+function rotate(e){
+  if(e.data.d=="n"){
+    currdeg = currdeg - 60;
+  }
+  if(e.data.d=="p"){
+    currdeg = currdeg + 60;
+  }
+  carousel.css({
+    "-webkit-transform": "rotateY("+currdeg+"deg)",
+    "-moz-transform": "rotateY("+currdeg+"deg)",
+    "-o-transform": "rotateY("+currdeg+"deg)",
+    "transform": "rotateY("+currdeg+"deg)"
+  });
+}
+</script>
+
+</body>
+</html>
