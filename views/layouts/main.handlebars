@@ -7,38 +7,18 @@
 
 	<link rel="stylesheet" href="/assets/css/style.css" type="text/css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="/assets/js/carousel.js"></script>
+	<meta name="google-signin-client_id" content="402017814268-p0c01dbp6uo04770io9fjmfv1bo6e6hc.apps.googleusercontent.com">	
 
 </head>
 
 <body>
 	
 	{{{ body }}}
-
+<script src="/assets/js/carousel.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 </body>
 
-<script type="text/javascript">
-	var carousel = $(".carousel"),
-    currdeg  = 0;
 
-$(".next").on("click", { d: "n" }, rotate);
-$(".prev").on("click", { d: "p" }, rotate);
-
-function rotate(e){
-  if(e.data.d=="n"){
-    currdeg = currdeg - 60;
-  }
-  if(e.data.d=="p"){
-    currdeg = currdeg + 60;
-  }
-  carousel.css({
-    "-webkit-transform": "rotateY("+currdeg+"deg)",
-    "-moz-transform": "rotateY("+currdeg+"deg)",
-    "-o-transform": "rotateY("+currdeg+"deg)",
-    "transform": "rotateY("+currdeg+"deg)"
-  });
-}
-</script>
 
 </html>

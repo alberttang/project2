@@ -2,11 +2,9 @@
 <html>
 <head>
 	<title>Sensus/Pollit/Reckoning</title>
-
 	<link rel="stylesheet" href="css/style.css" type="text/css">
-	<script src="js/carousel.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
+	<meta name="google-signin-client_id" content="402017814268-p0c01dbp6uo04770io9fjmfv1bo6e6hc.apps.googleusercontent.com">	
 </head>
 <body>
 	<div class="container">
@@ -27,28 +25,44 @@
 <div class="next">Next</div>
 <div class="prev">Prev</div>
 
-<script type="text/javascript">
-	var carousel = $(".carousel"),
-    currdeg  = 0;
-
-$(".next").on("click", { d: "n" }, rotate);
-$(".prev").on("click", { d: "p" }, rotate);
-
-function rotate(e){
-  if(e.data.d=="n"){
-    currdeg = currdeg - 60;
-  }
-  if(e.data.d=="p"){
-    currdeg = currdeg + 60;
-  }
-  carousel.css({
-    "-webkit-transform": "rotateY("+currdeg+"deg)",
-    "-moz-transform": "rotateY("+currdeg+"deg)",
-    "-o-transform": "rotateY("+currdeg+"deg)",
-    "transform": "rotateY("+currdeg+"deg)"
-  });
-}
+<div id="my-signin2"></div>
+<script>
+	function onSuccess(googleUser) {
+		console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+	}
+	function onFailure(error) {
+		console.log(error);
+	}
+	function renderButton() {
+		gapi.signin2.render('my-signin2', {
+			'scope': 'profile email',
+			'width': 240,
+			'height': 50,
+			'longtitle': true,
+			'theme': 'dark',
+			'onsuccess': onSuccess,
+			'onfailure': onFailure
+		});
+	}
 </script>
 
+
+<span>
+
+<!-- start log in form -->
+
+<div class="log-form">
+	<h2>Login to your account</h2>
+	<form>
+		<input type="text" title="username" placeholder="username" />
+		<input type="password" title="username" placeholder="password" />
+		<button type="submit" class="btn">Login</button>
+		<a class="forgot" href="#">Forgot Username?</a>
+	</form>
+</div>
+<!--end log form -->
+</span>
+<script src="js/carousel.js"></script>
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 </body>
 </html>
