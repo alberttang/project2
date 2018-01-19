@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    var Answers = sequelize.define("answers", {
+    var Answers = sequelize.define("answer", {
         option: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -9,13 +9,17 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    // DIFINING THE RELATIONSHIP BETWEEN ANSWERS AND POLLS
-    Answers.belongsTo(models.Polls, {
-        // THIS HAS TO HAVE A FOREIGN KEY
-        foreignKey: {
-            allowNull: false
-        }
-    });
 
-    return Users;
+    // // DEFINING THE RELATIONSHIP BETWEEN MODELS
+    // Answers.associate = function (models) {
+    //     // DIFINING THE RELATIONSHIP BETWEEN ANSWERS AND POLLS
+    //     Answers.belongsTo(models.Polls, {
+    //         // THIS HAS TO HAVE A FOREIGN KEY
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
+    // }; //  END ASSOCIATION FUNCTION
+
+return Answers;
 };

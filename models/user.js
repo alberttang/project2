@@ -33,12 +33,12 @@ module.exports = function (sequelize, DataTypes) {
     // DEFINING THE RELATIONSHIP BETWEEN MODELS
     User.associate = function (models) {
         // Associating User with Polls
-        User.hasMany(models.Polls, {
+        User.hasMany(models.poll, {
             // When a User is deleted, also delete any associated Polls            
             onDelete: "cascade"
         });
         // Associating User with Response 
-        User.hasMany(models.Response, {
+        User.hasMany(models.response, {
             // When a User is deleted, also delete any associated Responses
             onDelete: "cascade"
         });
