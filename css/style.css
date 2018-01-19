@@ -15,7 +15,7 @@ body {/* Permalink - use to edit and share this gradient: http://colorzilla.com/
   width: 250px;
   height: 200px;
   position: relative;
-  perspective: 1000px;
+  perspective: 600px;
 }
 
 .carousel {
