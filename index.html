@@ -1,24 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sensus/Pollit/Reckoning</title>
+	<title>SenseUs</title>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
-	<script src="js/carousel.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/particles.css" type="text/css">
 
 </head>
 <body>
+
+	<!-- particles.js container --> 
+	<div id="particles-js"></div> 
+	<!-- stats - count particles --> 
+	<div class="count-particles"> 
+		<span class="js-count-particles">--</span> particles 
+	</div> 
+	<!-- particles.js lib - https://github.com/VincentGarreau/particles.js --> 
+	<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+	<!-- stats.js lib --> 
+	<script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+
 	<div class="container">
 	  <div class="carousel">
-	    <div class="item a">Popular/Trending</div>
-	    <div class="item b">Entertainment</div>
-	    <div class="item c">
-	    	<p>Personal Questions</p>
-	    </div>
-	    <div class="item d">Preferences</div>
-	    <div class="item e">Politics</div>
-	    <div class="item f">World</div>
+			<div class="item a">
+				<h5 class="poll-category">Popular/Trending</h5>
+				<div class="poll">
+					<div class="poll-question">What is Harambe's favorite food?</div>
+					<div class="poll-answer">
+						<form>
+							<input type="radio" name="option-1" value="">
+								<span>Bananas</span>
+							<input type="radio" nam="option-2" value="">
+							 <span>Fresh meat</span><br>
+							<input type="radio" name="option-3" value=""> 
+							<span>Small children</span><br>
+							<input type="radio" name="option-4" value="">
+							<span>Slightly larger children</span>
+						</form> 
+					</div>
+					<button type="submit" class="btn">Vote</button>
+				</div>
+			</div>
+			<div class="item b">
+				<h5 class="poll-category">Entertainment</h5>
+			</div>
+	    	<div class="item c">
+				<h5 class="poll-category">Personal Questions</h5>
+	   		</div>
+	   		<div class="item d">
+				<h5 class="poll-category">Preferences</h5>
+			</div>
+	    	<div class="item e">
+				<h5 class="poll-category">Politics</h5>
+			</div>
+	    	<div class="item f">
+				<h5 class="poll-category">World</h5>
+			</div>
 	  </div>
 	</div>
 <div class="next">Next</div>
@@ -27,28 +70,22 @@
 <div class="next">Next</div>
 <div class="prev">Prev</div>
 
-<script type="text/javascript">
-	var carousel = $(".carousel"),
-    currdeg  = 0;
 
-$(".next").on("click", { d: "n" }, rotate);
-$(".prev").on("click", { d: "p" }, rotate);
+<!-- start log in form -->
 
-function rotate(e){
-  if(e.data.d=="n"){
-    currdeg = currdeg - 60;
-  }
-  if(e.data.d=="p"){
-    currdeg = currdeg + 60;
-  }
-  carousel.css({
-    "-webkit-transform": "rotateY("+currdeg+"deg)",
-    "-moz-transform": "rotateY("+currdeg+"deg)",
-    "-o-transform": "rotateY("+currdeg+"deg)",
-    "transform": "rotateY("+currdeg+"deg)"
-  });
-}
-</script>
+<div class="log-form">
+	<form>
+		<input type="text" title="username" placeholder="username" />
+		<input type="password" title="username" placeholder="password" />
+		<button type="submit" class="btn">Login</button>
+		<a class="forgot" href="#">Forgot Username?</a>
+	</form>
+</div>
+<!--end log form -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/particles.js"></script>
 
 <span>
 
