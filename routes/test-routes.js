@@ -5,20 +5,13 @@
 // Dependencies
 // =============================================================
 var path = require("path");
-<<<<<<< HEAD
 // REQUIRE THE MODELS FOLDER
 var db = require("../models");
-=======
 
->>>>>>> ec43bb0d863dfe2e8fb3abab06a2f683011cc9e9
 // Routes
 // =============================================================
 module.exports = function(app) {
 
-<<<<<<< HEAD
-    
-=======
->>>>>>> ec43bb0d863dfe2e8fb3abab06a2f683011cc9e9
   // Each of the below routes just handles the HTML page that the user gets sent to.
 
   // index route loads view.html
