@@ -2,11 +2,14 @@
 <html>
 <head>
 	<title>Sensus/Pollit/Reckoning</title>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<meta name="google-signin-client_id" content="236114324861-kkvg8dotni2rl3ar4rptoe340kjc68hv.apps.googleusercontent.com">
 
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 	<script src="js/carousel.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+	<!-- google platform library google sign in -->
+	
 </head>
 <body>
 	<div class="container">
@@ -57,14 +60,16 @@ function rotate(e){
 <div class="log-form">
 	<h2>Login to your account</h2>
 	<form>
-		<input type="text" title="username" placeholder="username" />
+		<!-- <input type="text" title="username" placeholder="username" />
 		<input type="password" title="username" placeholder="password" />
 		<button type="submit" class="btn">Login</button>
-		<a class="forgot" href="#">Forgot Username?</a>
+		<a class="forgot" href="#">Forgot Username?</a> -->
+	
 	</form>
 </div>
 <!--end log form -->
 </span>
 
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
 </body>
 </html>
