@@ -10,16 +10,16 @@ module.exports = function (sequelize, DataTypes) {
     });
 
 
-    // // DEFINING THE RELATIONSHIP BETWEEN MODELS
-    // Answers.associate = function (models) {
-    //     // DIFINING THE RELATIONSHIP BETWEEN ANSWERS AND POLLS
-    //     Answers.belongsTo(models.Polls, {
-    //         // THIS HAS TO HAVE A FOREIGN KEY
-    //         foreignKey: {
-    //             allowNull: false
-    //         }
-    //     });
-    // }; //  END ASSOCIATION FUNCTION
+    // DEFINING THE RELATIONSHIP BETWEEN MODELS
+    Answers.associate = function (models) {
+        // DIFINING THE RELATIONSHIP BETWEEN ANSWERS AND POLLS
+        Answers.belongsTo(models.poll, {
+            // THIS HAS TO HAVE A FOREIGN KEY
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    }; //  END ASSOCIATION FUNCTION
 
 return Answers;
 };
