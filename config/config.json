@@ -6,10 +6,6 @@
     "host": "localhost",
     "dialect": "mysql",
     "port": "3307"
-<<<<<<< HEAD
-=======
-
->>>>>>> 4d5debbea97776da53f388ae7005143b5b85652a
   },
   "test": {
     "username": "root",

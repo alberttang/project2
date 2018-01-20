@@ -40,7 +40,7 @@ module.exports = function (app) {
 
     //login route
     app.post("/login" , function (req, res){
-        db.User.findAll({
+        db.user.findOne({
             where: {
                 userName: req.body.userName
             }

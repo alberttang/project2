@@ -8,18 +8,6 @@ module.exports = function (sequelize, DataTypes) {
             }
         }
     });
-<<<<<<< HEAD
-Answers.associate = function(models) {
-    // DIFINING THE RELATIONSHIP BETWEEN ANSWERS AND POLLS
-    Answers.belongsTo(models.Polls, {
-        // THIS HAS TO HAVE A FOREIGN KEY
-        foreignKey: {
-            allowNull: false
-        }
-    });
-};
-    return Answers;
-=======
 
 
     // DEFINING THE RELATIONSHIP BETWEEN MODELS
@@ -34,5 +22,4 @@ Answers.associate = function(models) {
     }; //  END ASSOCIATION FUNCTION
 
 return Answers;
->>>>>>> 4d5debbea97776da53f388ae7005143b5b85652a
 };
