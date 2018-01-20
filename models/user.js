@@ -2,7 +2,7 @@
 module.exports = function (sequelize, DataTypes) {
     var User = sequelize.define("user", {
         // ROW ONE
-        firstName: {
+        userName: {
             type: DataTypes.STRING,
             allowNull: false,
             // MAKE SURE LENGTH IS GREATER THAN ONE 
@@ -11,7 +11,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         // ROW TWO
-        lastName: {
+        password: {
             type: DataTypes.STRING,
             allowNull: false,
             // MAKE SURE LENGTH IS GREATER THAN ONE 
