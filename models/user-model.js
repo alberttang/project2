@@ -10,6 +10,14 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
+        firstName: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            // MAKE SURE LENGTH IS GREATER THAN ONE 
+            validate: {
+                len: [1]
+            }
+        },
         // ROW TWO
         lastName: {
             type: DataTypes.STRING,
