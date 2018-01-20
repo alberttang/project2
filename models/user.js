@@ -2,7 +2,7 @@
 module.exports = function (sequelize, DataTypes) {
     var User = sequelize.define("user", {
         // ROW ONE
-        firstName: {
+        userName: {
             type: DataTypes.STRING,
             allowNull: false,
             // MAKE SURE LENGTH IS GREATER THAN ONE 
@@ -11,7 +11,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         // ROW TWO
-        lastName: {
+        password: {
             type: DataTypes.STRING,
             allowNull: false,
             // MAKE SURE LENGTH IS GREATER THAN ONE 
@@ -33,12 +33,12 @@ module.exports = function (sequelize, DataTypes) {
     // DEFINING THE RELATIONSHIP BETWEEN MODELS
     User.associate = function (models) {
         // Associating User with Polls
-        User.hasMany(models.Polls, {
+        User.hasMany(models.poll, {
             // When a User is deleted, also delete any associated Polls            
             onDelete: "cascade"
         });
         // Associating User with Response 
-        User.hasMany(models.Response, {
+        User.hasMany(models.response, {
             // When a User is deleted, also delete any associated Responses
             onDelete: "cascade"
         });

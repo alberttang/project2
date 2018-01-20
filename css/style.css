@@ -6,16 +6,41 @@ body {/* Permalink - use to edit and share this gradient: http://colorzilla.com/
   background: linear-gradient(to bottom, #98bede 0%,#deefff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#98bede', endColorstr='#deefff',GradientType=0 ); /* IE6-9 */
   background-repeat: no-repeat;
-    padding: 70px 0;
-    font: 15px/20px Arial, sans-serif;
+  font: 15px/20px Arial, sans-serif;
 }
 
-.container {
+h3 {border-bottom: 2px solid #98859d;}
+h6 {color: #854e94;
+  border-bottom: 1px solid #000;
+  width: 50%;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 1px #d8d8d8;}
+
+.header {position: relative; padding: 1%; text-align: center; overflow: auto;
+background: rgba(255,255,255,0.5);}
+.header .block-alpha {width: 30%; float: left;}
+.header .block-beta {width: 70%;}
+
+@import "compass/css3";
+
+.logo {font-size: 3.5em; color: #854e94;}
+.main {padding: 15% 0;}
+
+.home-container {
   margin: 0 auto;
   width: 250px;
   height: 200px;
   position: relative;
-  perspective: 1000px;
+  perspective: 600px;
+}
+
+.container {
+  background: #fff;
+  position: relative;
+  width: 80%;
+  height: auto;
+  padding: 1% 10%;
+  margin-top: 10%;
 }
 
 .carousel {
@@ -27,17 +52,24 @@ body {/* Permalink - use to edit and share this gradient: http://colorzilla.com/
 }
 
 .item {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e5e5e5+100;White+3D */
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
   display: block;
   position: absolute;
   background: #000;
   width: 250px;
-  height: 200px;
+  height: 300px;
   line-height: 200px;
   font-size: 2em;
   text-align: center;
   color: #FFF;
   opacity: 0.95;
   border-radius: 10px;
+  text-shadow: 1px 1px 2px #333;
 }
 
 .item p {
@@ -48,27 +80,27 @@ body {/* Permalink - use to edit and share this gradient: http://colorzilla.com/
 
 .a {
   transform: rotateY(0deg) translateZ(250px);
-  background: #ed1c24;
+  /* background: #ed1c24; */
 }
 .b {
   transform: rotateY(60deg) translateZ(250px);
-  background: #0072bc;
+  /* background: #0072bc; */
 }
 .c {
   transform: rotateY(120deg) translateZ(250px);
-  background: #39b54a;
+  /* background: #39b54a; */
 }
 .d {
   transform: rotateY(180deg) translateZ(250px);
-  background: #f26522;
+  /* background: #f26522; */
 }
 .e {
   transform: rotateY(240deg) translateZ(250px);
-  background: #630460;
+  /* background: #630460; */
 } 
 .f {
   transform: rotateY(300deg) translateZ(250px);
-  background: #8c6239;
+  /* background: #8c6239; */
 }
 
 .next, .prev {
@@ -91,9 +123,30 @@ body {/* Permalink - use to edit and share this gradient: http://colorzilla.com/
 .next { right: 5em; }
 .prev { left: 5em; }
 
+/* Polls */
+
+.home-container .poll-category {color: #333; text-shadow: none; border-bottom: 1px solid #98859d;}
+.home-container .poll-question {line-height: 1em; color: #000; text-shadow: none; font-size: .7em;
+ padding: 3%;}
+.home-container .poll-answer form {line-height: 1em; font-size: .5em; color: #000; text-shadow: none;}
+
+.poll {background: #fff; line-height: 3em; border-bottom: 2px solid #98859d;}
+.poll-question {font-size: 1.5em;}
+.poll-answer form {line-height: 1em; font-size: 1.2em; color: #000;}
+
+[type="radio"]:not(:checked), [type="radio"]:checked + span {position: relative;
+opacity: 1; pointer-events: auto; vertical-align: middle;}
+
+.vote-button {margin: 2%;}
+.total-votes {float: right;}
+i.small, .vote-counter {color: rgba(0,0,0,0.87); text-shadow: none;}
+i.small {float: left;}
+.vote-counter {float: left; font-size: 1.8em;}
 
 
-/* start log in css*/
+
+
+/* Forms */
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:400,300,600);
 
@@ -108,21 +161,26 @@ background:url(http://farm8.staticflickr.com/7064/6858179818_5d652f531c_h.jpg) n
   background-size: cover;
 }
 
+.log-form input {width: 25% !important;}
+
+a.forgot {float: left;}
+
 @grey:#2a2a2a;
 @blue:#1fb5bf;
 .log-form {
-  width: 40%;
+  width: 20%;
   min-width: 320px;
   max-width: 475px;
-  background:grey;
+ /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6393c1+0,cfe7fa+100 */
+background: rgb(99,147,193); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(99,147,193,1) 0%, rgba(207,231,250,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(99,147,193,1) 0%,rgba(207,231,250,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(99,147,193,1) 0%,rgba(207,231,250,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6393c1', endColorstr='#cfe7fa',GradientType=0 ); /* IE6-9 */
   position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%,-50%);
--moz-transform: translate(-50%,-50%);
--o-transform: translate(-50%,-50%);
--ms-transform: translate(-50%,-50%);
-transform: translate(-50%,-50%);
+  top: 0;
+  right: 0;
+  padding: .5%;
   
   box-shadow: 0px 2px 5px rgba(0,0,0,.25);
   
@@ -144,7 +202,7 @@ transform: translate(0%,0%);
     padding: 2em;
   }
   
-  h2 {
+  .log-form h4 {
     width: 100%;
     color: lighten(@grey, 20%);
     font-family: 'open sans condensed';
@@ -157,14 +215,14 @@ transform: translate(0%,0%);
     box-shadow:inset 0px 1px 1px fadeout(white, 95%);
     border: 1px solid darken(@grey, 5%);
     //text-shadow: 0px 1px 1px darken(@grey, 5%);
-    margin: 0;
+    margin: 2%;
     font-weight: 200;
   }
   
   input {
     display: block;
     margin: auto auto;
-    width: 100%;
+    width: 25% !important;
     margin-bottom: 2em;
     padding: .5em 0;
     border: none;
@@ -216,4 +274,4 @@ transform: translate(0%,0%);
   
 }
 
-/*end log in form*/
+.container input[type="text"] {margin: 1%; width: 70%;}

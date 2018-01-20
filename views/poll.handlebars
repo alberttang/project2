@@ -1,0 +1,49 @@
+<!-- particles.js container --> 
+	<div id="particles-js"></div> 
+	<!-- stats - count particles --> 
+	<div class="count-particles"> 
+		<span class="js-count-particles">--</span> particles 
+	</div> 
+	<!-- particles.js lib - https://github.com/VincentGarreau/particles.js --> 
+	<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+	<!-- stats.js lib --> 
+	<script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+
+	<div class="header">
+		<div class="block-alpha">
+			<a href="/">
+				<div class="logo">PollIt</div>
+			</a>
+		</div>
+		<div class="block-beta">
+
+		</div>
+	</div>
+
+	<div class="container">
+        <h3>Create Poll</h3>
+        <form>
+            <h6>Poll Question:</h6><br>
+            <input type="text" name="create_poll-question"><br>
+            <h6>Poll Answers:</h6><br>
+            <input type="text" name="create_poll-answer-1"><br>
+            <input type="text" name="create_poll-answer-2"><br>
+            <input type="text" name="create_poll-answer-3"><br>
+            <input type="text" name="create_poll-answer-4">
+        </form>
+        <button type="submit" class="btn create-poll">Post Poll</button>
+    </div>
+
+
+
+<!-- start log in form -->
+
+<div class="log-form">
+	<form>
+		<input type="text" title="username" placeholder="username" />
+		<input type="password" title="username" placeholder="password" />
+		<button type="submit" class="btn">Login</button>
+		<a class="forgot" href="#">Forgot Username?</a>
+	</form>
+</div>
+<!--end log form -->
