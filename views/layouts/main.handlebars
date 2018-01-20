@@ -5,9 +5,16 @@
 	<meta charset="UTF-8">
 	<title>Sensus/Pollit/Reckoning</title>
 
+	<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="/assets/css/materialize.min.css"  media="screen,projection"/>
+
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link rel="stylesheet" href="/assets/css/style.css" type="text/css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="/assets/js/carousel.js"></script>
+	<link rel="stylesheet" href="/assets/css/particles.css" type="text/css">
+
 
 </head>
 
@@ -15,36 +22,15 @@
 	
 	{{{ body }}}
 
-<<<<<<< HEAD
-=======
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="js/carousel.js"></script>
-<script src="js/particles.js"></script>
->>>>>>> ec43bb0d863dfe2e8fb3abab06a2f683011cc9e9
+<script src="/assets/js/carousel.js"></script>
+<script src="/assets/js/particles.js"></script>
+<script src="/assets/js/logic.js"></script>
+
 
 </body>
 
-<script type="text/javascript">
-	var carousel = $(".carousel"),
-    currdeg  = 0;
 
-$(".next").on("click", { d: "n" }, rotate);
-$(".prev").on("click", { d: "p" }, rotate);
-
-function rotate(e){
-  if(e.data.d=="n"){
-    currdeg = currdeg - 60;
-  }
-  if(e.data.d=="p"){
-    currdeg = currdeg + 60;
-  }
-  carousel.css({
-    "-webkit-transform": "rotateY("+currdeg+"deg)",
-    "-moz-transform": "rotateY("+currdeg+"deg)",
-    "-o-transform": "rotateY("+currdeg+"deg)",
-    "transform": "rotateY("+currdeg+"deg)"
-  });
-}
-</script>
 
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>PollIt - Home</title>
+	<title>PollIt - Category</title>
 <!--Import Google Icon Font-->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!--Import materialize.css-->
@@ -39,57 +39,29 @@
 		</div>
 	</div>
 
-	<div class="main">
-		<div class="home-container">
-		<div class="carousel">
-				<div class="item a">
-					<h5 class="poll-category">
-						<a href="category.html">Popular/Trending</a>
-					</h5>
-					<div class="poll">
-						<div class="poll-question">What is Harambe's favorite food?</div>
-						<div class="poll-answer">
-							<form>
-								<input type="radio" name="option" value="">
-									<span>Bananas</span>
-								<input type="radio" name="option" value="">
-								<span>Fresh meat</span><br>
-								<input type="radio" name="option" value=""> 
-								<span>Small children</span>
-								<input type="radio" name="option" value="">
-								<span>Slightly larger children</span>
-							</form> 
-						</div>
-						<button type="submit" class="btn vote-button">Vote</button>
-						<div class="total-votes">
-							<i class="small material-icons">insert_chart</i>
-							<div class="vote-counter"></div>
-						</div>
-					</div>
-				</div>
-				<div class="item b">
-					<h5 class="poll-category">Entertainment</h5>
-				</div>
-				<div class="item c">
-					<h5 class="poll-category">Personal Questions</h5>
-				</div>
-				<div class="item d">
-					<h5 class="poll-category">Preferences</h5>
-				</div>
-				<div class="item e">
-					<h5 class="poll-category">Politics</h5>
-				</div>
-				<div class="item f">
-					<h5 class="poll-category">World</h5>
-				</div>
+	<div class="container">
+        <h3 class="category-title">Popular/Trending</h3>
+        <div class="poll">
+			<div class="poll-question">What is Harambe's favorite food?</div>
+			<div class="poll-answer">
+				<form>
+					<input type="radio" name="option" value="">
+						<span>Bananas</span>
+					<input type="radio" name="option" value="">
+						<span>Fresh meat</span><br>
+					<input type="radio" name="option" value=""> 
+						<span>Small children</span>
+					<input type="radio" name="option" value="">
+						<span>Slightly larger children</span>
+				</form> 
+			</div>
+			<button type="submit" class="btn vote-button">Vote</button>
+			<div class="total-votes">
+				<i class="small material-icons">insert_chart</i>
+				<div class="vote-counter"></div>
+			</div>
 		</div>
-		</div>
-	</div>
-<div class="next">Next</div>
-<div class="prev">Prev</div>
-</div>
-<div class="next">Next</div>
-<div class="prev">Prev</div>
+    </div>
 
 
 <!-- start log in form -->
@@ -108,6 +80,8 @@
 <script src="js/carousel.js"></script>
 <script src="js/particles.js"></script>
 <script src="js/logic.js"></script>
+
+</script>
 
 </body>
 </html>

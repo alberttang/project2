@@ -6,11 +6,7 @@ body {/* Permalink - use to edit and share this gradient: http://colorzilla.com/
   background: linear-gradient(to bottom, #98bede 0%,#deefff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#98bede', endColorstr='#deefff',GradientType=0 ); /* IE6-9 */
   background-repeat: no-repeat;
-<<<<<<< HEAD
-    padding: 70px 0;
-=======
     padding: 15% 0;
->>>>>>> ec43bb0d863dfe2e8fb3abab06a2f683011cc9e9
     font: 15px/20px Arial, sans-serif;
 }
 
@@ -19,7 +15,7 @@ body {/* Permalink - use to edit and share this gradient: http://colorzilla.com/
   width: 250px;
   height: 200px;
   position: relative;
-  perspective: 1000px;
+  perspective: 600px;
 }
 
 .carousel {
@@ -31,34 +27,24 @@ body {/* Permalink - use to edit and share this gradient: http://colorzilla.com/
 }
 
 .item {
-<<<<<<< HEAD
-=======
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e5e5e5+100;White+3D */
 background: rgb(255,255,255); /* Old browsers */
 background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6-15 */
 background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
->>>>>>> ec43bb0d863dfe2e8fb3abab06a2f683011cc9e9
   display: block;
   position: absolute;
   background: #000;
   width: 250px;
-<<<<<<< HEAD
-  height: 200px;
-=======
   height: 300px;
->>>>>>> ec43bb0d863dfe2e8fb3abab06a2f683011cc9e9
   line-height: 200px;
   font-size: 2em;
   text-align: center;
   color: #FFF;
   opacity: 0.95;
   border-radius: 10px;
-<<<<<<< HEAD
-=======
   text-shadow: 1px 1px 2px #333;
->>>>>>> ec43bb0d863dfe2e8fb3abab06a2f683011cc9e9
 }
 
 .item p {
@@ -69,29 +55,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 .a {
   transform: rotateY(0deg) translateZ(250px);
-<<<<<<< HEAD
-  background: #ed1c24;
-}
-.b {
-  transform: rotateY(60deg) translateZ(250px);
-  background: #0072bc;
-}
-.c {
-  transform: rotateY(120deg) translateZ(250px);
-  background: #39b54a;
-}
-.d {
-  transform: rotateY(180deg) translateZ(250px);
-  background: #f26522;
-}
-.e {
-  transform: rotateY(240deg) translateZ(250px);
-  background: #630460;
-} 
-.f {
-  transform: rotateY(300deg) translateZ(250px);
-  background: #8c6239;
-=======
   /* background: #ed1c24; */
 }
 .b {
@@ -113,7 +76,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .f {
   transform: rotateY(300deg) translateZ(250px);
   /* background: #8c6239; */
->>>>>>> ec43bb0d863dfe2e8fb3abab06a2f683011cc9e9
 }
 
 .next, .prev {
@@ -134,9 +96,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   box-shadow: 0 1px 0 #999;
 }
 .next { right: 5em; }
-<<<<<<< HEAD
-.prev { left: 5em; }
-=======
 .prev { left: 5em; }
 
 /* Polls */
@@ -282,4 +241,3 @@ transform: translate(0%,0%);
 }
 
 /*end log in form*/
->>>>>>> ec43bb0d863dfe2e8fb3abab06a2f683011cc9e9

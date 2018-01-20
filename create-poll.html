@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>PollIt - Home</title>
+	<title>PollIt - Create Poll</title>
 <!--Import Google Icon Font-->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!--Import materialize.css-->
@@ -33,63 +33,24 @@
 			</a>
 		</div>
 		<div class="block-beta">
-			<a href="create-poll.html">
-				<button type="submit" class="btn">Create Poll</button>
-			</a>
+
 		</div>
 	</div>
 
-	<div class="main">
-		<div class="home-container">
-		<div class="carousel">
-				<div class="item a">
-					<h5 class="poll-category">
-						<a href="category.html">Popular/Trending</a>
-					</h5>
-					<div class="poll">
-						<div class="poll-question">What is Harambe's favorite food?</div>
-						<div class="poll-answer">
-							<form>
-								<input type="radio" name="option" value="">
-									<span>Bananas</span>
-								<input type="radio" name="option" value="">
-								<span>Fresh meat</span><br>
-								<input type="radio" name="option" value=""> 
-								<span>Small children</span>
-								<input type="radio" name="option" value="">
-								<span>Slightly larger children</span>
-							</form> 
-						</div>
-						<button type="submit" class="btn vote-button">Vote</button>
-						<div class="total-votes">
-							<i class="small material-icons">insert_chart</i>
-							<div class="vote-counter"></div>
-						</div>
-					</div>
-				</div>
-				<div class="item b">
-					<h5 class="poll-category">Entertainment</h5>
-				</div>
-				<div class="item c">
-					<h5 class="poll-category">Personal Questions</h5>
-				</div>
-				<div class="item d">
-					<h5 class="poll-category">Preferences</h5>
-				</div>
-				<div class="item e">
-					<h5 class="poll-category">Politics</h5>
-				</div>
-				<div class="item f">
-					<h5 class="poll-category">World</h5>
-				</div>
-		</div>
-		</div>
-	</div>
-<div class="next">Next</div>
-<div class="prev">Prev</div>
-</div>
-<div class="next">Next</div>
-<div class="prev">Prev</div>
+	<div class="container">
+        <h3>Create Poll</h3>
+        <form>
+            <h6>Poll Question:</h6><br>
+            <input type="text" name="create_poll-question"><br>
+            <h6>Poll Answers:</h6><br>
+            <input type="text" name="create_poll-answer-1"><br>
+            <input type="text" name="create_poll-answer-2"><br>
+            <input type="text" name="create_poll-answer-3"><br>
+            <input type="text" name="create_poll-answer-4">
+        </form>
+        <button type="submit" class="btn create-poll">Post Poll</button>
+    </div>
+
 
 
 <!-- start log in form -->

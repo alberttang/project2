@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-<div class="container">
-	  <div class="carousel">
-	    <div class="item a">Popular/Trending</div>
-	    <div class="item b">Entertainment</div>
-	    <div class="item c">
-	    	<p>Personal Questions</p>
-	    </div>
-	    <div class="item d">Preferences</div>
-	    <div class="item e">Politics</div>
-	    <div class="item f">World</div>
-=======
 <!-- particles.js container --> 
 	<div id="particles-js"></div> 
 	<!-- stats - count particles --> 
@@ -21,52 +9,69 @@
 	<!-- stats.js lib --> 
 	<script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
 
-	<div class="container">
-	  <div class="carousel">
-			<div class="item a">
-				<h5 class="poll-category">Popular/Trending</h5>
-				<div class="poll">
-					<div class="poll-question">What is Harambe's favorite food?</div>
-					<div class="poll-answer">
-						<form>
-							<input type="radio" name="option-1" value="">
-								<span>Bananas</span>
-							<input type="radio" nam="option-2" value="">
-							 <span>Fresh meat</span><br>
-							<input type="radio" name="option-3" value=""> 
-							<span>Small children</span><br>
-							<input type="radio" name="option-4" value="">
-							<span>Slightly larger children</span>
-						</form> 
+	<div class="header">
+		<div class="block-alpha">
+			<a href="index.html">
+				<div class="logo">PollIt</div>
+			</a>
+		</div>
+		<div class="block-beta">
+			<a href="create-poll.html">
+				<button type="submit" class="btn">Create Poll</button>
+			</a>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="home-container">
+		<div class="carousel">
+				<div class="item a">
+					<h5 class="poll-category">
+						<a href="category.html">Popular/Trending</a>
+					</h5>
+					<div class="poll">
+						<div class="poll-question">What is Harambe's favorite food?</div>
+						<div class="poll-answer">
+							<form>
+								<input type="radio" name="option" value="">
+									<span>Bananas</span>
+								<input type="radio" name="option" value="">
+								<span>Fresh meat</span><br>
+								<input type="radio" name="option" value=""> 
+								<span>Small children</span>
+								<input type="radio" name="option" value="">
+								<span>Slightly larger children</span>
+							</form> 
+						</div>
+						<button type="submit" class="btn vote-button">Vote</button>
+						<div class="total-votes">
+							<i class="small material-icons">insert_chart</i>
+							<div class="vote-counter"></div>
+						</div>
 					</div>
-					<button type="submit" class="btn">Vote</button>
 				</div>
-			</div>
-			<div class="item b">
-				<h5 class="poll-category">Entertainment</h5>
-			</div>
-	    	<div class="item c">
-				<h5 class="poll-category">Personal Questions</h5>
-	   		</div>
-	   		<div class="item d">
-				<h5 class="poll-category">Preferences</h5>
-			</div>
-	    	<div class="item e">
-				<h5 class="poll-category">Politics</h5>
-			</div>
-	    	<div class="item f">
-				<h5 class="poll-category">World</h5>
-			</div>
->>>>>>> ec43bb0d863dfe2e8fb3abab06a2f683011cc9e9
-	  </div>
+				<div class="item b">
+					<h5 class="poll-category">Entertainment</h5>
+				</div>
+				<div class="item c">
+					<h5 class="poll-category">Personal Questions</h5>
+				</div>
+				<div class="item d">
+					<h5 class="poll-category">Preferences</h5>
+				</div>
+				<div class="item e">
+					<h5 class="poll-category">Politics</h5>
+				</div>
+				<div class="item f">
+					<h5 class="poll-category">World</h5>
+				</div>
+		</div>
+		</div>
 	</div>
 <div class="next">Next</div>
 <div class="prev">Prev</div>
 </div>
 <div class="next">Next</div>
-<<<<<<< HEAD
-<div class="prev">Prev</div>
-=======
 <div class="prev">Prev</div>
 
 
@@ -81,4 +86,8 @@
 	</form>
 </div>
 <!--end log form -->
->>>>>>> ec43bb0d863dfe2e8fb3abab06a2f683011cc9e9
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/logic.js"></script>
