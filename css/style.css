@@ -6,16 +6,41 @@ body {/* Permalink - use to edit and share this gradient: http://colorzilla.com/
   background: linear-gradient(to bottom, #98bede 0%,#deefff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#98bede', endColorstr='#deefff',GradientType=0 ); /* IE6-9 */
   background-repeat: no-repeat;
-    padding: 15% 0;
-    font: 15px/20px Arial, sans-serif;
+  font: 15px/20px Arial, sans-serif;
 }
 
-.container {
+h3 {border-bottom: 2px solid #98859d;}
+h6 {color: #854e94;
+  border-bottom: 1px solid #000;
+  width: 50%;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 1px #d8d8d8;}
+
+.header {position: relative; padding: 1%; text-align: center; overflow: auto;
+background: rgba(255,255,255,0.5);}
+.header .block-alpha {width: 30%; float: left;}
+.header .block-beta {width: 70%;}
+
+@import "compass/css3";
+
+.logo {font-size: 3.5em; color: #854e94;}
+.main {padding: 15% 0;}
+
+.home-container {
   margin: 0 auto;
   width: 250px;
   height: 200px;
   position: relative;
   perspective: 600px;
+}
+
+.container {
+  background: #fff;
+  position: relative;
+  width: 80%;
+  height: auto;
+  padding: 1% 10%;
+  margin-top: 10%;
 }
 
 .carousel {
@@ -100,19 +125,28 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 /* Polls */
 
-.poll {background-color: #fff; line-height: 3em;}
-.poll-category {color: #333; text-shadow: none; border-bottom: 1px solid #98859d;}
-.poll-question {line-height: 1em; color: #000; text-shadow: none; font-size: .7em;
+.home-container .poll-category {color: #333; text-shadow: none; border-bottom: 1px solid #98859d;}
+.home-container .poll-question {line-height: 1em; color: #000; text-shadow: none; font-size: .7em;
  padding: 3%;}
- .poll-answer form {line-height: 1em; font-size: .5em; color: #000; text-shadow: none;}
+.home-container .poll-answer form {line-height: 1em; font-size: .5em; color: #000; text-shadow: none;}
 
- [type="radio"]:not(:checked), [type="radio"]:checked {position: relative;
-opacity: 1; pointer-events: auto;}
+.poll {background: #fff; line-height: 3em; border-bottom: 2px solid #98859d;}
+.poll-question {font-size: 1.5em;}
+.poll-answer form {line-height: 1em; font-size: 1.2em; color: #000;}
+
+[type="radio"]:not(:checked), [type="radio"]:checked + span {position: relative;
+opacity: 1; pointer-events: auto; vertical-align: middle;}
+
+.vote-button {margin: 2%;}
+.total-votes {float: right;}
+i.small, .vote-counter {color: rgba(0,0,0,0.87); text-shadow: none;}
+i.small {float: left;}
+.vote-counter {float: left; font-size: 1.8em;}
 
 
 
 
-/* start log in css*/
+/* Forms */
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:400,300,600);
 
@@ -240,4 +274,4 @@ transform: translate(0%,0%);
   
 }
 
-/*end log in form*/
+.container input[type="text"] {margin: 1%; width: 70%;}
