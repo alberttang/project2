@@ -1,4 +1,9 @@
 module.exports = function (sequelize, DataTypes) {
+
+    /*
+        ================= ANSWER CONSTRUCTOR ==================== 
+    */
+    
     var Answer = sequelize.define("Answer", {
         option: {
             type: DataTypes.STRING,
@@ -15,6 +20,11 @@ module.exports = function (sequelize, DataTypes) {
             }
         }
     });
+
+    /*
+        ================= RELATIONSHIP DEFFINITION ==============
+    */
+
     // DEFINING THE RELATIONSHIP BETWEEN MODELS
     Answer.associate = function (models) {
         // DIFINING THE RELATIONSHIP BETWEEN ANSWER AND POLLS
@@ -25,6 +35,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         });
     }; //  END ASSOCIATION FUNCTION
-    // RETURN THE ANSWER CONSTRUCTOR
+
     return Answer;
-};
+
+}; // END EXPORT FUNCTION

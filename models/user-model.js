@@ -1,6 +1,10 @@
-
 module.exports = function (sequelize, DataTypes) {
-    var User = sequelize.define("User", {
+
+    /*
+        ================= USER CONSTRUCTOR =================
+    */
+
+    var User = sequelize.define("ser", {
         // ROW ONE
         firstName: {
             type: DataTypes.STRING,
@@ -38,6 +42,10 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
+    /*
+        ================= RELATIONSHIP DEFFINITION ==============
+    */
+
     // DEFINING THE RELATIONSHIP BETWEEN MODELS
     User.associate = function (models) {
         // Associating User with Polls
@@ -54,4 +62,3 @@ module.exports = function (sequelize, DataTypes) {
 
     return User;
 };
-

@@ -3,7 +3,7 @@ var db = require("../../models");
 
 // EXPORT THESE ROUTES 
 module.exports = function (app) {
-    
+
     /*
         ================= POST ==================== 
     */
@@ -26,11 +26,11 @@ module.exports = function (app) {
     */
 
     // GET THE POLL INFO
-    app.get("/api/poll/:id", function (req, res) {
+    app.get("/api/response/:id", function (req, res) {
         // CONSOLE LOG THE REQUEST BODY
         console.log(req.body);
         // GET THE USER MODEL 
-        db.Poll.findAll({
+        db.Response.findAll({
             // FIND WHERE THE USERNAME IS THE SAME AS REQ.BODY
             where: {
                 id: req.params.id

@@ -1,4 +1,9 @@
 module.exports = function (sequelize, DataTypes) {
+
+    /*
+        ================= POLL CONSTRUCTOR ==================== 
+    */
+
     var Poll = sequelize.define("Poll", {
         question: {
             type: DataTypes.STRING,
@@ -9,7 +14,10 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    // DEFINING THE RELATIONSHIP BETWEEN MODELS
+    /*
+        ================= RELATIONSHIP DEFFINITION ==============
+    */
+    
     Poll.associate = function (models) {
         // CONSOLE LOG THE MODELS OBJECT
         console.log(models);

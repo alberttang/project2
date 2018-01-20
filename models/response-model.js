@@ -1,4 +1,9 @@
 module.exports = function (sequelize, DataTypes) {
+
+    /*
+        ================= RESPONSE CONSTRUCTOR =================
+    */
+
     var Response = sequelize.define("Response", {
         answerId: {
             type: DataTypes.INTEGER,
@@ -9,7 +14,10 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    // DEFINING THE RELATIONSHIP BETWEEN MODELS
+    /*
+        ================= RELATIONSHIP DEFFINITION ==============
+    */
+
     Response.associate = function (models) {
         // Associating Polls with Response 
         Response.belongsTo(models.User, {
