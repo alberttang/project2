@@ -1,6 +1,6 @@
 
 module.exports = function (sequelize, DataTypes) {
-    var User = sequelize.define("user", {
+    var User = sequelize.define("User", {
         // ROW ONE
         firstName: {
             type: DataTypes.STRING,
@@ -41,12 +41,12 @@ module.exports = function (sequelize, DataTypes) {
     // DEFINING THE RELATIONSHIP BETWEEN MODELS
     User.associate = function (models) {
         // Associating User with Polls
-        User.hasMany(models.poll, {
+        User.hasMany(models.Poll, {
             // When a User is deleted, also delete any associated Polls            
             onDelete: "cascade"
         });
         // Associating User with Response 
-        User.hasMany(models.response, {
+        User.hasMany(models.Response, {
             // When a User is deleted, also delete any associated Responses
             onDelete: "cascade"
         });

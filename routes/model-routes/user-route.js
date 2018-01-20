@@ -1,12 +1,12 @@
 // REQUIRE THE MODELS FOLDER
-var db = require("../models");
+var db = require("../../models");
 
 // EXPORT THESE ROUTES 
 module.exports = function (app) {
 
     // POST THE NEW USER TO THE DB
     app.post("/api/create/user", function (req, res) {
-        // GET THE 
+        // GET THE USER IS
         db.User.create(req.body).then(function (dbAuthor) {
             res.json(dbAuthor);
         });
