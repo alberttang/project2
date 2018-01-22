@@ -37,7 +37,7 @@ module.exports = function (app) {
 
 
     app.get("/create-poll*", 
-        verifyJwt,
+        //verifyJwt,
         function (req, res) {
             var hbsObject = {
                 name: 1
