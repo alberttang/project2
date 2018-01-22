@@ -8,6 +8,11 @@ var path = require("path");
 // REQUIRE THE MODELS FOLDER
 var db = require("../models");
 var User = require('../models/user.js');
+var passport = require('passport')
+var crypto = require('crypto')
+var jwt = require('jsonwebtoken')
+
+var salt = 'asdffdsa'
 // Routes
 // =============================================================
 module.exports = function (app) {
@@ -31,40 +36,25 @@ module.exports = function (app) {
     });
 
 
-    app.get("/create-poll*", function (req, res) {
-        var hbsObject = {
-            name: 1
-        };
-        res.render("poll", hbsObject);
-    });
+    app.get("/create-poll*", 
+        verifyJwt,
+        function (req, res) {
+            var hbsObject = {
+                name: 1
+            };
+            res.render("poll", hbsObject);
+        });
 
     //login route
-    app.post("/login" , function (req, res){
-        db.user.findOne({
-            where: {
-                userName: req.body.userName
-            }
-        }).then(user => {
-            if(user) {
-                if(user.password === req.body.password) {
-                    res.send({ message: 'success' })
-                } else {
-                    res.status(400).send({ message: 'username/password is invalid' })
-                }
-            } else {
-                res.status(400).send({ message: 'username/password is invalid' })
-            }
-        })
-    })
-
+    app.post("/login" , 
+        passport.authenticate('local', { session: false }),   
+        function (req, res) {
+            res.send({ token: jwt.sign(req.user.dataValues, salt) })
+        }
+    )
 
     //sign up route
     app.post("/signup", function (req, res) {
-        console.log(req.body)
-        // TODO: lookup username in DB if there's a username existing, error out and tell the user that username is taken
-        //       else send success back
-        //find query 
-
         db.user.findOne({
             where: {
                 userName: req.body.userName,
@@ -75,8 +65,15 @@ module.exports = function (app) {
             if(user) {
                 res.status(400).send({ message: 'username is taken, try with different username' })
             } else {
-                // TODO: Save this user
                 var newUser = db.user.build(req.body)
+                var saltedPassword = newUser.password + salt
+                var hashedPassword = crypto.createHash('md5').update(saltedPassword).digest('hex')
+                // console.log('hashed password', hashedPassword)
+                // console.log('raw password', req.body.password)
+                // console.log('salt' + salt)
+                // console.log('salted password', saltedPassword)
+
+                newUser.password = hashedPassword
                 newUser.save()
                 .then(() => {
                     res.send({ message: 'success' })
@@ -92,6 +89,16 @@ module.exports = function (app) {
         })
     })
 
+
+    function verifyJwt(req, res, done) {
+        jwt.verify(req.headers.Authorization, salt, function(err, decodedUser) {
+            if(err) {
+                return res.status(401).send({ message: 'user is not authorized' })
+            }
+            req.user = decodedUser
+            done()
+        })
+    } 
 
     //   // cms route loads cms.html
     //   app.get("/cms", function(req, res) {
