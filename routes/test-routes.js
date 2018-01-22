@@ -7,7 +7,6 @@
 var path = require("path");
 // REQUIRE THE MODELS FOLDER
 var db = require("../models");
-var User = require('../models/user.js');
 // Routes
 // =============================================================
 module.exports = function (app) {
@@ -23,13 +22,6 @@ module.exports = function (app) {
         res.render("index", hbsObject);
     });
 
-    app.get("/category*", function (req, res) {
-        var hbsObject = {
-            name: 1
-        };
-        res.render("category", hbsObject);
-    });
-
 
     app.get("/create-poll*", function (req, res) {
         var hbsObject = {
@@ -38,60 +30,49 @@ module.exports = function (app) {
         res.render("poll", hbsObject);
     });
 
-    //login route
-    app.post("/login" , function (req, res){
-        db.User.findAll({
-            where: {
-                userName: req.body.userName
-            }
-        }).then(user => {
-            if(user) {
-                if(user.password === req.body.password) {
-                    res.send({ message: 'success' })
-                } else {
-                    res.status(400).send({ message: 'username/password is invalid' })
-                }
-            } else {
-                res.status(400).send({ message: 'username/password is invalid' })
-            }
-        })
+/* Category Pages */
+
+    app.get("/popular", function (req, res) {
+        var hbsObject = {
+            name: 1
+        }
+        res.render("popular", hbsObject);
     })
 
-
-    //sign up route
-    app.post("/signup", function (req, res) {
-        console.log(req.body)
-        // TODO: lookup username in DB if there's a username existing, error out and tell the user that username is taken
-        //       else send success back
-        //find query 
-
-        db.user.findOne({
-            where: {
-                userName: req.body.userName,
-            }
-        })
-        .then(user => {
-            console.log(user);
-            if(user) {
-                res.status(400).send({ message: 'username is taken, try with different username' })
-            } else {
-                // TODO: Save this user
-                var newUser = db.user.build(req.body)
-                newUser.save()
-                .then(() => {
-                    res.send({ message: 'success' })
-                })
-                .catch(err => {
-                    res.status(400).send({ message: 'could not sign you up, try again later' })
-                });
-            }
-        })
-        .catch(err => {
-            console.log(err)
-            res.status(400).send({ message: 'username is invalid'})
-        })
+    app.get("/entertainment", function(req, res) {
+        var hbsObject = {
+            name: 1
+        }
+        res.render("entertainment", hbsObject);
     })
 
+    app.get("/personal-questions", function(req, res) {
+        var hbsObject = {
+            name: 1
+        }
+        res.render("personal-questions", hbsObject);
+    })
+
+    app.get("/science", function(req, res) {
+        var hbsObject = {
+            name: 1
+        }
+        res.render("science", hbsObject);
+    })
+
+    app.get("/philosophy", function(req, res) {
+        var hbsObject = {
+            name: 1
+        }
+        res.render("philosophy", hbsObject);
+    })
+
+    app.get("/world", function(req, res) {
+        var hbsObject = {
+            name: 1
+        }
+        res.render("world", hbsObject);
+    })
 
     //   // cms route loads cms.html
     //   app.get("/cms", function(req, res) {
