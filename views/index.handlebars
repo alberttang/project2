@@ -20,6 +20,17 @@
 				<button type="submit" class="btn">Create Poll</button>
 			</a>
 		</div>
+		<div class="block-omega">
+			<div class="log-form">
+				<form>
+					<input type="text" title="username" placeholder="username" />
+					<input type="password" title="username" placeholder="password" />
+					<button type="submit" class="btn login">Login</button>
+					<a class="forgot" href="#">Forgot Username?</a>
+				</form>
+				<button class="signup" onclick="document.getElementById('signup').style.display='block'" style="width:auto;">Sign Up</button>
+			</div>
+		</div>
 	</div>
 
 	<div class="main">
@@ -27,7 +38,7 @@
 		<div class="carousel">
 				<div class="item a">
 					<h5 class="poll-category">
-						<a href="/category">Popular/Trending</a>
+						<a href="/popular">Popular/Trending</a>
 					</h5>
 					<div class="poll">
 						<div class="poll-question">What is Harambe's favorite food?</div>
@@ -36,11 +47,11 @@
 								<input type="radio" name="option" value="">
 									<span>Bananas</span>
 								<input type="radio" name="option" value="">
-								<span>Fresh meat</span><br>
+									<span>Fresh meat</span><br>
 								<input type="radio" name="option" value=""> 
-								<span>Small children</span>
+									<span>Small children</span>
 								<input type="radio" name="option" value="">
-								<span>Slightly larger children</span>
+									<span>Slightly larger children</span>
 							</form> 
 						</div>
 						<button type="submit" class="btn vote-button">Vote</button>
@@ -51,19 +62,29 @@
 					</div>
 				</div>
 				<div class="item b">
-					<h5 class="poll-category">Entertainment</h5>
+					<h5 class="poll-category">
+						<a href="/entertainment">Entertainment</a>
+					</h5>
 				</div>
 				<div class="item c">
-					<h5 class="poll-category">Personal Questions</h5>
+					<h5 class="poll-category">
+						<a href="/personal-questions">Personal Questions</a>
+					</h5>
 				</div>
 				<div class="item d">
-					<h5 class="poll-category">Preferences</h5>
+					<h5 class="poll-category">
+						<a href="/science">Science</a>
+					</h5>
 				</div>
 				<div class="item e">
-					<h5 class="poll-category">Politics</h5>
+					<h5 class="poll-category">
+						<a href="/philosophy">Philosophy</a>
+					</h5>
 				</div>
 				<div class="item f">
-					<h5 class="poll-category">World</h5>
+					<h5 class="poll-category">
+						<a href="/world">World</a>
+					</h5>
 				</div>
 		</div>
 		</div>
@@ -74,20 +95,57 @@
 <div class="next">Next</div>
 <div class="prev">Prev</div>
 
+{{!-- /* Signup form */ --}}
 
-<!-- start log in form -->
+<div id="signup" class="modal">
+  <span onclick="document.getElementById('signup').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <label><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
 
-<div class="log-form">
-	<form>
-		<input type="text" title="username" placeholder="username" />
-		<input type="password" title="username" placeholder="password" />
-		<button type="submit" class="btn">Login</button>
-		<a class="forgot" href="#">Forgot Username?</a>
-	</form>
+	  <label<b>Username</b></label>
+	  <input type="text" placeholder="Enter Username" name="username" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      
+      <label>
+        <input type="checkbox" checked="checked" style="margin-bottom:15px"> Remember me
+      </label>
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('signup').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
 </div>
-<!--end log form -->
+
+<script>
+// Get the modal
+var modal = document.getElementById('signup');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/carousel.js"></script>
 <script src="js/particles.js"></script>
 <script src="js/logic.js"></script>
+<script src="js/chart.js"></script>
