@@ -99,19 +99,19 @@
 
 <div id="signup" class="modal">
   <span onclick="document.getElementById('signup').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" method="post" action="/signup">
+  <form class="modal-content" method="post" action="/api/auth/signup">
     <div class="container">
       <h1>Sign Up</h1>
       <p>Please fill in this form to create an account.</p>
       <hr>
       <label><b>Email</b></label>
-      <input type="text" id="email" placeholder="Enter Email" name="email" required>
+      <input type="text" placeholder="Enter Email" name="email" required>
 
 	  <label<b>Username</b></label>
-	  <input type="text" id="userName" placeholder="Enter Username" name="username" required>
+	  <input type="text" placeholder="Enter Username" name="userName" required>
 
       <label><b>Password</b></label>
-      <input type="password" id="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" placeholder="Enter Password" name="password" required>
 
       {{!-- <label><b>Repeat Password</b></label>
       <input type="password" placeholder="Repeat Password" name="psw-repeat" required> --}}

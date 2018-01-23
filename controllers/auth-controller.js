@@ -2,6 +2,9 @@ var crypto = require('crypto')
 var jwt = require('jsonwebtoken')
 var db = require("../models");
 
+var salt = 'asdffdsa'
+
+
 exports.login = function (req, res) {
     res.send({ token: jwt.sign(req.user.dataValues, salt) })
 }
