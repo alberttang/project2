@@ -47,6 +47,15 @@ module.exports = function (app) {
             res.render("poll", hbsObject);
         });
 
+    app.get("/my-polls",
+        //verifyJWT,
+        function(req, res) {
+            var hbsObject = {
+                name: 1
+            }
+            res.render("mypolls", hbsObject);
+        })
+
     //login route
     app.post("/login" , 
         passport.authenticate('local', { session: false }),   
