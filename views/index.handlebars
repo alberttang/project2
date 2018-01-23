@@ -22,9 +22,9 @@
 		</div>
 		<div class="block-omega">
 			<div class="log-form">
-				<form>
-					<input type="text" title="username" placeholder="username" />
-					<input type="password" title="username" placeholder="password" />
+				<form action="/api/auth/login" method="post">
+					<input type="text" name="userName" title="username" placeholder="username" />
+					<input type="password" name="password" title="username" placeholder="password" />
 					<button type="submit" class="btn login">Login</button>
 					<a class="forgot" href="#">Forgot Username?</a>
 				</form>
@@ -105,7 +105,7 @@
 
 <div id="signup" class="modal">
   <span onclick="document.getElementById('signup').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/action_page.php">
+  <form class="modal-content" method="post" action="/api/auth/signup">
     <div class="container">
       <h1>Sign Up</h1>
       <p>Please fill in this form to create an account.</p>
@@ -114,13 +114,13 @@
       <input type="text" placeholder="Enter Email" name="email" required>
 
 	  <label<b>Username</b></label>
-	  <input type="text" placeholder="Enter Username" name="username" required>
+	  <input type="text" placeholder="Enter Username" name="userName" required>
 
       <label><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" placeholder="Enter Password" name="password" required>
 
-      <label><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      {{!-- <label><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required> --}}
       
       <label>
         <input type="checkbox" checked="checked" style="margin-bottom:15px"> Remember me
@@ -130,7 +130,7 @@
 
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('signup').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Sign Up</button>
+        <button type="submit"  class="signupbtn">Sign Up</button>
       </div>
     </div>
   </form>
