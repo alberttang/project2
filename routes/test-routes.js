@@ -87,16 +87,5 @@ module.exports = function (app) {
             name: 1
         }
         res.render("world", hbsObject);
-    })
-
-    function verifyJwt(req, res, done) {
-        jwt.verify(req.headers.Authorization, salt, function(err, decodedUser) {
-            if(err) {
-                return res.status(401).send({ message: 'user is not authorized' })
-            }
-            req.user = decodedUser
-            done()
-        })
-    } 
-});
+    }) 
 }
