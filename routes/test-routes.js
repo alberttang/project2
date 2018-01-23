@@ -8,6 +8,7 @@ var path = require("path");
 // REQUIRE THE MODELS FOLDER
 var db = require("../models");
 var User = require('../models/user.js');
+var authCont = require('../controllers/auth-controller.js')
 
 
 var salt = 'asdffdsa'
@@ -27,7 +28,9 @@ module.exports = function (app) {
     });
 
 
-    app.get("/create-poll*", function (req, res) {
+    app.get("/create-poll",
+    authCont.verifyJwt,
+    function (req, res) {
         var hbsObject = {
             name: 1
         };

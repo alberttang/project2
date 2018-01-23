@@ -22,9 +22,9 @@
 		</div>
 		<div class="block-omega">
 			<div class="log-form">
-				<form>
-					<input type="text" title="username" placeholder="username" />
-					<input type="password" title="username" placeholder="password" />
+				<form action="/api/auth/login" method="post">
+					<input type="text" name="userName" title="username" placeholder="username" />
+					<input type="password" name="password" title="username" placeholder="password" />
 					<button type="submit" class="btn login">Login</button>
 					<a class="forgot" href="#">Forgot Username?</a>
 				</form>

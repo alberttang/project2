@@ -54,3 +54,5 @@ function verifyJwt(req, res, done) {
         done()
     })
 }
+
+exports.verifyJwt = verifyJwt
