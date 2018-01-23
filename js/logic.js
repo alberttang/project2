@@ -2,13 +2,15 @@
 var votes = 0;
 
 /* Vote Tally */
-$('.vote-button').click(function() {
+$('.vote-button').one('click', function() {
     votes++;
     $('.vote-counter').html(votes);
     console.log(votes);
 })
 
 /* Create Poll */
-$('.create-poll').on('click', function() {
+$('.create-poll').one('click', function() {
     
 })
+
+

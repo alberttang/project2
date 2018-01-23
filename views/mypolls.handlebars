@@ -1,0 +1,47 @@
+<!-- particles.js container --> 
+	<div id="particles-js"></div> 
+	<!-- stats - count particles --> 
+	<div class="count-particles"> 
+		<span class="js-count-particles">--</span> particles 
+	</div> 
+	<!-- particles.js lib - https://github.com/VincentGarreau/particles.js --> 
+	<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+	<!-- stats.js lib --> 
+	<script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+
+	<div class="header">
+		<div class="block-alpha">
+			<a href="/">
+				<div class="logo">PollIt - My Polls</div>
+			</a>
+		</div>
+		<div class="block-beta">
+			<a href="create-poll.html">
+				<button type="submit" class="btn">Create Poll</button>
+			</a>
+		</div>
+	</div>
+
+	<div class="container">
+        <h3 class="category-title">My Polls</h3>
+        <div class="poll">
+			<div class="poll-question"></div>
+			<div class="poll-answer">
+				<form>
+					<input type="radio" name="option" value="">
+						<span></span>
+					<input type="radio" name="option" value="">
+						<span></span><br>
+					<input type="radio" name="option" value=""> 
+						<span></span>
+					<input type="radio" name="option" value="">
+						<span></span>
+				</form> 
+			</div>
+			<button type="submit" class="btn vote-button">Vote</button>
+			<div class="total-votes">
+				<i class="small material-icons">insert_chart</i>
+				<div class="vote-counter"></div>
+			</div>
+		</div>
+    </div>
