@@ -99,22 +99,22 @@
 
 <div id="signup" class="modal">
   <span onclick="document.getElementById('signup').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/action_page.php">
+  <form class="modal-content" method="post" action="/signup">
     <div class="container">
       <h1>Sign Up</h1>
       <p>Please fill in this form to create an account.</p>
       <hr>
       <label><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
+      <input type="text" id="email" placeholder="Enter Email" name="email" required>
 
 	  <label<b>Username</b></label>
-	  <input type="text" placeholder="Enter Username" name="username" required>
+	  <input type="text" id="userName" placeholder="Enter Username" name="username" required>
 
       <label><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" id="password" placeholder="Enter Password" name="psw" required>
 
-      <label><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      {{!-- <label><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required> --}}
       
       <label>
         <input type="checkbox" checked="checked" style="margin-bottom:15px"> Remember me
