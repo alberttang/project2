@@ -28,13 +28,15 @@ module.exports = function (app) {
         res.render("index", hbsObject);
     });
 
-    app.get("/category*", function (req, res) {
+
+    app.get("/create-poll*", function (req, res) {
         var hbsObject = {
             name: 1
         };
-        res.render("category", hbsObject);
+        res.render("poll", hbsObject);
     });
 
+/* Category Pages */
 
     app.get("/create-poll*", 
         //verifyJwt,
@@ -87,8 +89,47 @@ module.exports = function (app) {
             console.log(err)
             res.status(400).send({ message: 'username is invalid'})
         })
+    app.get("/popular", function (req, res) {
+        var hbsObject = {
+            name: 1
+        }
+        res.render("popular", hbsObject);
     })
 
+    app.get("/entertainment", function(req, res) {
+        var hbsObject = {
+            name: 1
+        }
+        res.render("entertainment", hbsObject);
+    })
+
+    app.get("/personal-questions", function(req, res) {
+        var hbsObject = {
+            name: 1
+        }
+        res.render("personal-questions", hbsObject);
+    })
+
+    app.get("/science", function(req, res) {
+        var hbsObject = {
+            name: 1
+        }
+        res.render("science", hbsObject);
+    })
+
+    app.get("/philosophy", function(req, res) {
+        var hbsObject = {
+            name: 1
+        }
+        res.render("philosophy", hbsObject);
+    })
+
+    app.get("/world", function(req, res) {
+        var hbsObject = {
+            name: 1
+        }
+        res.render("world", hbsObject);
+    })
 
     function verifyJwt(req, res, done) {
         jwt.verify(req.headers.Authorization, salt, function(err, decodedUser) {
@@ -114,5 +155,6 @@ module.exports = function (app) {
     //   app.get("/authors", function(req, res) {
     //     res.sendFile(path.join(__dirname, "../public/author-manager.html"));
     //   });
-    // 
-};
+
+});
+}
