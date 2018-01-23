@@ -4,7 +4,9 @@ module.exports = function (sequelize, DataTypes) {
         ================= ANSWER CONSTRUCTOR ==================== 
     */
     
+    // ANSWER CONSTRUCTOR FUNCTION FOR DB
     var Answer = sequelize.define("Answer", {
+        // OPTION PROPERTY
         option: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -12,6 +14,7 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             },
         },
+        // NUM PROPERTY
         num: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -19,7 +22,7 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         }
-    });
+    }); // END ANSWER
 
     /*
         ================= RELATIONSHIP DEFFINITION ==============

@@ -19,7 +19,7 @@ module.exports = function (sequelize, DataTypes) {
     */
 
     Response.associate = function (models) {
-        // Associating Polls with Response 
+        // Associating Response with Poll
         Response.belongsTo(models.User, {
             // When a User is deleted, also delete any associated Polls            
             onDelete: "cascade"

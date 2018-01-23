@@ -4,7 +4,7 @@ module.exports = function (sequelize, DataTypes) {
         ================= USER CONSTRUCTOR =================
     */
 
-    var User = sequelize.define("ser", {
+    var User = sequelize.define("User", {
         // ROW ONE
         firstName: {
             type: DataTypes.STRING,

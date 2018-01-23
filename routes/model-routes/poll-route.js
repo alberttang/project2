@@ -11,12 +11,14 @@ module.exports = function (app) {
     // POST THE NEW POLL TO THE DB
     app.post("/api/poll", function (req, res) {
         // CONSOLE LOG THE REQUEST BODY
-        console.log(req.body);
+        console.log(req.body.question);
         // POST THE POLL TO THE DB
         db.Poll.create({
             question: req.body.question
         }).then(function (dbAuthor) {
             res.json(dbAuthor);
+        }).catch(function(err) {
+            console.log(err);
         });
     }); // END POST
 
@@ -55,7 +57,7 @@ module.exports = function (app) {
 
     // DELETE route for deleting polls
     app.delete("/api/poll/:id", function (req, res) {
-        // CONSOLE LOG RTHE REQUEST OBJ
+        // CONSOLE LOG THE REQUEST OBJ
         console.log(req.body);
         // DELETE THE ID IN THE DB
         db.Poll.destroy({
