@@ -7,7 +7,7 @@
 var path = require("path");
 // REQUIRE THE MODELS FOLDER
 var db = require("../models");
-var User = require('../models/user.js');
+var User = require('../models/user-model.js');
 var authCont = require('../controllers/auth-controller.js')
 
 
