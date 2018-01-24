@@ -48,6 +48,14 @@ module.exports = function (app) {
             res.render("poll", hbsObject);
         });
 
+    app.get("/my-polls",
+        function(req, res) {
+            var hbsObject = {
+                name: 1
+            }
+            res.render("mypolls", hbsObject);
+        })
+
     
 
     app.get("/popular", function (req, res) {

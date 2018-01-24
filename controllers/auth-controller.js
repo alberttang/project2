@@ -10,7 +10,7 @@ exports.login = function (req, res) {
 }
 
 exports.signup = function (req, res) {
-    db.user.findOne({
+    db.User.findOne({
         where: {
             userName: req.body.userName,
         }
@@ -20,7 +20,7 @@ exports.signup = function (req, res) {
         if (user) {
             res.status(400).send({ message: 'username is taken, try with different username' })
         } else {
-            var newUser = db.user.build(req.body)
+            var newUser = db.User.build(req.body)
             var saltedPassword = newUser.password + salt
             var hashedPassword = crypto.createHash('md5').update(saltedPassword).digest('hex')
 
