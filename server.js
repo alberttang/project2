@@ -45,7 +45,6 @@ require("./routes/test-routes.js")(app);
 // require("./routes/post-api-routes.js")(app);
 
 require("./routes/test-routes")(app);
-require("./routes/model-routes/answer-route")(app);
 require("./routes/model-routes/response-route")(app);
 require("./routes/model-routes/poll-route")(app);
 // Syncing our sequelize models and then starting our Express app
