@@ -1,3 +1,4 @@
+var authCont = require('../../controllers/auth-controller.js')
 // REQUIRE THE MODELS FOLDER
 var db = require("../../models");
 
@@ -9,7 +10,7 @@ module.exports = function (app) {
     */
 
     // POST THE NEW POLL TO THE DB
-    app.post("/api/poll", function (req, res) {
+    app.post("/api/poll", authCont.verifyJwt, function (req, res) {
         console.log("YOOOOOOO")
         // CONSOLE LOG THE REQUEST BODY
         // array of answers
@@ -17,7 +18,7 @@ module.exports = function (app) {
         // POST THE POLL TO THE DB
         db.Poll.create({
             question: req.body.question,
-            UserId: req.body.UserId
+            UserId: req.user.id
         }).then(function (response) {
             console.log("yo",response)
             answers.forEach(function(answer) {

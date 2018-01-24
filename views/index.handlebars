@@ -22,10 +22,11 @@
 		</div>
 		<div class="block-omega">
 			<div class="log-form">
-				<form action="/api/auth/login" method="post">
-					<input type="text" name="userName" title="username" placeholder="username" />
-					<input type="password" name="password" title="username" placeholder="password" />
-					<button type="submit" class="btn login">Login</button>
+				<form >
+				{{!-- action="/api/auth/login" method="post" --}}
+					<input type="text" id="username" name="userName" title="username" placeholder="username" />
+					<input type="password" id="password" name="password" title="username" placeholder="password" />
+					<button type="button" id="loginBtn" class="btn login">Login</button>
 					<a class="forgot" href="#">Forgot Username?</a>
 				</form>
 				<button class="signup" onclick="document.getElementById('signup').style.display='block'" style="width:auto;">Sign Up</button>
