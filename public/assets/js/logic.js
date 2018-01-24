@@ -8,6 +8,36 @@ $('.vote-button').click(function () {
     console.log(votes);
 })
 
+$(function () {
+    $(".login").on("click", function (event) {
+        event.preventDefault();
+        if (document.getElementById('loginBtn').innerHTML === 'Sign out') {
+            return
+        }
+        var username = document.getElementById('username').value
+        var password = document.getElementById('password').value
+        console.log(username)
+        console.log(password)
+        //TODO: create a post request. save the resulting token in session storage.
+        $.post("/api/auth/login", { userName: username, password: password }, function (data, status) {
+            console.log(status)
+            console.log(data)
+            if (status === "success") {
+                sessionStorage.userId = data.userId
+                sessionStorage.jwt = data.token
+                sessionStorage.userName = data.userName
+                document.getElementById('username').remove()
+                document.getElementById('password').remove()
+                document.getElementById('loginBtn').innerHTML = 'Sign out ' + sessionStorage.userName
+                document.getElementById('loginBtn').onClick = function (event) {
+                    sessionStorage.clear()
+                    location.reload()
+                }
+            }
+
+        });
+    })
+})
 
 $(function () {
     $(".create-poll").on("click", function (event) {
@@ -19,6 +49,7 @@ $(function () {
         var pollOption4 = $('input[name="create_poll-answer-4"]').val().trim();
 
         var newPoll = {
+            "UserId":sessionStorage.userId,
             "question": pollQuestion,
             "answers": [
                 {
@@ -59,15 +90,15 @@ $(function () {
             alert('at least two text inputs are filled');
             return false;
         } else {
+
             console.log(newPoll);
             // window.location.replace('/');
 
-            axios.post('/api/poll', newPoll, {headers: { Authorization: sessionStorage.jwt}})
+            axios.post('/api/poll', newPoll, { headers: { Authorization: sessionStorage.jwt } })
                 .then(function (response) {
                     var pollID = response.data[0].PollId;
                     console.log("The Poll ID is : " + pollID);
                     console.log(response);
-
                     window.location.replace('/api/poll/' + pollID);
 
 
@@ -82,32 +113,3 @@ $(function () {
 });
 
 
-$(function () {
-    $(".login").on("click", function (event) {
-        event.preventDefault();
-        if (document.getElementById('loginBtn').innerHTML === 'Sign out') {
-            return
-        }
-        var username = document.getElementById('username').value
-        var password = document.getElementById('password').value
-        console.log(username)
-        console.log(password)
-        //TODO: create a post request. save the resulting token in session storage.
-        $.post("/api/auth/login",{ userName: username, password: password }, function (data, status) {
-            console.log (status)
-            console.log(data)
-            if (status === "success"){
-                sessionStorage.jwt=data.token
-                sessionStorage.userName = data.userName
-                document.getElementById('username').remove()
-                document.getElementById('password').remove()
-                document.getElementById('loginBtn').innerHTML = 'Sign out ' + sessionStorage.userName
-                document.getElementById('loginBtn').onClick = function (event) {
-                    sessionStorage.clear()
-                    location.reload()
-                }
-            }
-
-        });
-    })
-})
