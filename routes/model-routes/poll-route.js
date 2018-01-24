@@ -27,7 +27,7 @@ module.exports = function (app) {
            return db.Answer.bulkCreate(answers)
         })
         .then(function(response) {
-            res.json(response);
+            res.render(response);
         })
         .catch(function(err) {
             console.log(err);
