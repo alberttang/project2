@@ -18,7 +18,7 @@ module.exports = function (app) {
         // POST THE POLL TO THE DB
         db.Poll.create({
             question: req.body.question,
-            UserId: req.user.id
+            UserId: req.body.UserId
         }).then(function (response) {
             console.log("yo",response)
             answers.forEach(function(answer) {
@@ -28,7 +28,7 @@ module.exports = function (app) {
            return db.Answer.bulkCreate(answers)
         })
         .then(function(response) {
-            res.render(response);
+            res.json(response);
         })
         .catch(function(err) {
             console.log(err);
@@ -51,7 +51,11 @@ module.exports = function (app) {
                 id: req.params.id
             }
         }).then(function (dbAuthor) {
-            res.json(dbAuthor);
+            // console.log(dbAuthor.data);            
+            // res.json(dbAuthor);
+            res.render("mypolls", {
+                data: dbAuthor })
+
         });
     }); // END GET
 

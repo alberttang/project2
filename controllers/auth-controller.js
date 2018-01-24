@@ -6,7 +6,7 @@ var salt = 'asdffdsa'
 
 
 exports.login = function (req, res) {
-    res.send({ token: jwt.sign(req.user.dataValues, salt), userName: req.user.userName })
+    res.send({ token: jwt.sign(req.user.dataValues, salt), userName: req.user.userName, userId: req.user.id })
 }
 
 exports.signup = function (req, res) {
