@@ -49,8 +49,8 @@ module.exports = function (app) {
             where: {
                 id: req.params.id
             }
-        }).then(function (dbAuthor) {
-            res.json(dbAuthor);
+        }).then(function (dbPoll) {
+            res.json(dbPoll);
         });
     }); // END GET
 
