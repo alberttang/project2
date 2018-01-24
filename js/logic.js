@@ -8,9 +8,17 @@ $('.vote-button').one('click', function() {
     console.log(votes);
 })
 
-/* Create Poll */
+/* Create Poll, Check if User is Logged In */
 $('.create-poll').one('click', function() {
-    
+    verifyJwt();
+    if (err) {
+        throw (err);
+        alert("Please log in");
+    } else {
+        alert("Sweet!");
+    }
 })
+
+
 
 
