@@ -1,8 +1,20 @@
-
 module.exports = function (sequelize, DataTypes) {
-    var User = sequelize.define("user", {
+
+    /*
+        ================= USER CONSTRUCTOR =================
+    */
+
+    var User = sequelize.define("User", {
         // ROW ONE
         userName: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            // MAKE SURE LENGTH IS GREATER THAN ONE 
+            validate: {
+                len: [1]
+            }
+        },
+        firstName: {
             type: DataTypes.STRING,
             allowNull: false,
             // MAKE SURE LENGTH IS GREATER THAN ONE 
@@ -30,15 +42,19 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
+    /*
+        ================= RELATIONSHIP DEFFINITION ==============
+    */
+
     // DEFINING THE RELATIONSHIP BETWEEN MODELS
     User.associate = function (models) {
         // Associating User with Polls
-        User.hasMany(models.poll, {
+        User.hasMany(models.Poll, {
             // When a User is deleted, also delete any associated Polls            
             onDelete: "cascade"
         });
         // Associating User with Response 
-        User.hasMany(models.response, {
+        User.hasMany(models.Response, {
             // When a User is deleted, also delete any associated Responses
             onDelete: "cascade"
         });

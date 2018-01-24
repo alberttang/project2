@@ -1,5 +1,10 @@
 module.exports = function (sequelize, DataTypes) {
-    var Polls = sequelize.define("poll", {
+
+    /*
+        ================= POLL CONSTRUCTOR ==================== 
+    */
+
+    var Poll = sequelize.define("Poll", {
         question: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -9,28 +14,31 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    // DEFINING THE RELATIONSHIP BETWEEN MODELS
-    Polls.associate = function (models) {
+    /*
+        ================= RELATIONSHIP DEFFINITION ==============
+    */
+    
+    Poll.associate = function (models) {
         // CONSOLE LOG THE MODELS OBJECT
         console.log(models);
-        // ASSOCIATING POLLS WITH MANY RESPONSES  
-        Polls.hasMany(models.response, {
+        // ASSOCIATING POLL WITH MANY RESPONSES  
+        Poll.hasMany(models.Response, {
             // When a User is deleted, also delete any associated Polls            
             onDelete: "cascade"
         });
-        // ASSOCIATING POLLS WITH MANY ANSWERS
-        Polls.hasMany(models.answer, {
+        // ASSOCIATING POLL WITH MANY ANSWERS
+        Poll.hasMany(models.Answer, {
             // When a User is deleted, also delete any associated Polls            
             onDelete: "cascade"
         });
         // We're saying that a Post should belong to an Author
         // ASSOCIATING POLLS TO BELONG TO MANY USERS
-        Polls.belongsTo(models.user, {
+        Poll.belongsTo(models.User, {
             foreignKey: {
                 allowNull: false
             }
         });
     };
 
-    return Polls;
+    return Poll;
 };
