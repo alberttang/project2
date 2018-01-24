@@ -17,7 +17,7 @@ module.exports = function (sequelize, DataTypes) {
     /*
         ================= RELATIONSHIP DEFFINITION ==============
     */
-    
+
     Poll.associate = function (models) {
         // CONSOLE LOG THE MODELS OBJECT
         console.log(models);

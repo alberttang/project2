@@ -145,6 +145,8 @@ i.small, .vote-counter {color: rgba(0,0,0,0.87); text-shadow: none;}
 i.small {float: left;}
 .vote-counter {float: left; font-size: 1.8em;}
 
+.my-polls {position: relative;}
+
 
 
 

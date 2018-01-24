@@ -10,14 +10,26 @@ module.exports = function (app) {
 
     // POST THE NEW POLL TO THE DB
     app.post("/api/poll", function (req, res) {
+        console.log("YOOOOOOO")
         // CONSOLE LOG THE REQUEST BODY
-        console.log(req.body.question);
+        // array of answers
+        var answers = req.body.answers;
         // POST THE POLL TO THE DB
         db.Poll.create({
-            question: req.body.question
-        }).then(function (dbAuthor) {
-            res.json(dbAuthor);
-        }).catch(function(err) {
+            question: req.body.question,
+            UserId: req.body.UserId
+        }).then(function (response) {
+            console.log("yo",response)
+            answers.forEach(function(answer) {
+                answer.PollId = response.id;
+            })
+            console.log(answers)
+           return db.Answer.bulkCreate(answers)
+        })
+        .then(function(response) {
+            res.json(response);
+        })
+        .catch(function(err) {
             console.log(err);
         });
     }); // END POST
@@ -31,8 +43,9 @@ module.exports = function (app) {
         // CONSOLE LOG THE REQUEST BODY
         console.log(req.body);
         // GET THE USER MODEL 
-        db.Poll.findAll({
+        db.Poll.findOne({
             // FIND WHERE THE USERNAME IS THE SAME AS REQ.BODY
+            include: [db.Answer],
             where: {
                 id: req.params.id
             }
@@ -46,7 +59,9 @@ module.exports = function (app) {
         // CONSOLE LOG THE REQUEST BODY
         console.log(req.body);
         // GET ALL POLLS
-        db.Poll.findAll({}).then(function (dbAuthor) {
+        db.Poll.findAll({
+            include: [db.Answer]
+        }).then(function (dbAuthor) {
             res.json(dbAuthor);
         });
     }); // END GET
