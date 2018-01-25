@@ -171,6 +171,8 @@ a.forgot {float: left;}
 
 button.btn.login {height: 18px !important; font-size: 1em; line-height: 1.5em;}
 
+.js-plotly-plot .plotly .modebar {display: none;}
+
 
 .log-form {
   width: 20%;

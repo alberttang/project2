@@ -28,6 +28,7 @@ $(function () {
                 sessionStorage.userName = data.userName
                 document.getElementById('username').remove()
                 document.getElementById('password').remove()
+                document.getElementById('signup-button').remove()
                 document.getElementById('loginBtn').innerHTML = 'Sign out ' + sessionStorage.userName
                 document.getElementById('loginBtn').onClick = function (event) {
                     sessionStorage.clear()
