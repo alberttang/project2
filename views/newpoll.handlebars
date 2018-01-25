@@ -12,34 +12,36 @@
 	<div class="header">
 		<div class="block-alpha">
 			<a href="/">
-				<div class="logo">PollIt</div>
+				<div class="logo">PollIt - My Polls</div>
 			</a>
 		</div>
 		<div class="block-beta">
-			<a href="create-poll.html">
+			<a href="/create-poll.html">
 				<button type="submit" class="btn">Create Poll</button>
 			</a>
 		</div>
 	</div>
-{{#each this.data}}
+
 	<div class="container">
-        <h3 class="category-title">{{category}}</h3>
+        <h3 class="category-title">{{this.data.User.userName}} Poll #{{this.data.id}}</h3>
         <div class="poll">
-			<div class="poll-question">
-				{{question}}
-			</div>
+			<div class="poll-question">{{this.data.question}}</div>
+			<div class="poll-question">{{this.data.category}}</div>
+
 			<div class="poll-answer">
 				<form>
-					{{#Answers}}
-					<input type="radio" name="option" value={{option}}>
-						<span>{{option}}</span>
-						{{/Answers}}
-					{{!-- <input type="radio" name="option" value="">
-						<span>Fresh meat</span><br>
-					<input type="radio" name="option" value=""> 
-						<span>Small children</span>
 					<input type="radio" name="option" value="">
-						<span>Slightly larger children</span> --}}
+						<span>{{this.data.Answers.[0].option}}</span>
+					<input type="radio" name="option" value="">
+						<span>{{this.data.Answers.[1].option}}</span><br>
+					  {{#if this.data.Answers.[2].option}}
+					<input type="radio" name="option" value=""> 
+						<span>{{this.data.Answers.[2].option}}</span>
+						{{/if}}
+						{{#if this.data.Answers.[3].option}}
+					<input type="radio" name="option" value="">
+						<span>{{this.data.Answers.[3].option}}</span>
+						{{/if}}
 				</form> 
 			</div>
 			<button type="submit" class="btn vote-button">Vote</button>
@@ -49,18 +51,3 @@
 			</div>
 		</div>
     </div>
-					{{/each}}
-
-
-
-<!-- start log in form -->
-
-<div class="log-form">
-	<form>
-		<input type="text" title="username" placeholder="username" />
-		<input type="password" title="username" placeholder="password" />
-		<button type="submit" class="btn">Login</button>
-		<a class="forgot" href="#">Forgot Username?</a>
-	</form>
-</div>
-<!--end log form -->

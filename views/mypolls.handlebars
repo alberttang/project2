@@ -16,26 +16,25 @@
 			</a>
 		</div>
 		<div class="block-beta">
-			<a href="create-poll.html">
+			<a href="/create-poll.html">
 				<button type="submit" class="btn">Create Poll</button>
 			</a>
 		</div>
 	</div>
 
+{{#each this.data}}
 	<div class="container">
-        <h3 class="category-title">My Polls</h3>
+        <h3 class="category-title">{{category}}</h3>
         <div class="poll">
-			<div class="poll-question">{{this.data.question}}</div>
+			<div class="poll-question">
+				{{question}}
+			</div>
 			<div class="poll-answer">
 				<form>
-					<input type="radio" name="option" value="">
-						<span>{{this.data.Answers.[0].option}}</span>
-					<input type="radio" name="option" value="">
-						<span>{{this.data.Answers.[1].option}}</span><br>
-					<input type="radio" name="option" value=""> 
-						<span>{{this.data.Answers.[2].option}}</span>
-					<input type="radio" name="option" value="">
-						<span>{{this.data.Answers.[3].option}}</span>
+					{{#Answers}}
+					<input type="radio" name="option" value={{option}}>
+						<span>{{option}}</span>
+						{{/Answers}}
 				</form> 
 			</div>
 			<button type="submit" class="btn vote-button">Vote</button>
@@ -43,10 +42,6 @@
 				<i class="small material-icons">insert_chart</i>
 				<div class="vote-counter"></div>
 			</div>
-			<div class="poll-results">
-				<div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
-			</div>
-			</div>
-    	</div>
-
-		
+		</div>
+    </div>
+					{{/each}}
