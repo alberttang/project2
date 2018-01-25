@@ -44,7 +44,7 @@ module.exports = function (app) {
                 id: req.params.id
             }
         }).then(function (dbAuthor) {
-            res.json(dbAuthor);
+            // res.json(dbAuthor);
         });
     }); // END GET 
 
@@ -52,19 +52,19 @@ module.exports = function (app) {
         ================= DELETE ==================== 
     */
 
-    // DELETE route for deleting responses
-    app.delete("/api/response/:id", function (req, res) {
-        // CONSOLE LOG RTHE REQUEST OBJ
-        console.log(req.body);
-        // DELETE THE ID IN THE DB
-        db.Response.destroy({
-                where: {
-                    id: req.params.id
-                }
-            })
-            .then(function (dbPost) {
-                res.json(dbPost);
-            });
-    }); // END DELETE
+    // // DELETE route for deleting responses
+    // app.delete("/api/response/:id", function (req, res) {
+    //     // CONSOLE LOG RTHE REQUEST OBJ
+    //     console.log(req.body);
+    //     // DELETE THE ID IN THE DB
+    //     db.Response.destroy({
+    //             where: {
+    //                 id: req.params.id
+    //             }
+    //         })
+    //         .then(function (dbPost) {
+    //             res.json(dbPost);
+    //         });
+    // }); // END DELETE
 
 }; // END EXPORT
