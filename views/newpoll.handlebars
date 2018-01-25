@@ -22,19 +22,26 @@
 		</div>
 	</div>
 
-{{#each this.data}}
 	<div class="container">
-        <h3 class="category-title">{{category}}</h3>
+        <h3 class="category-title">{{this.data.User.userName}} Poll #{{this.data.id}}</h3>
         <div class="poll">
-			<div class="poll-question">
-				{{question}}
-			</div>
+			<div class="poll-question">{{this.data.question}}</div>
+			<div class="poll-question">{{this.data.category}}</div>
+
 			<div class="poll-answer">
 				<form>
-					{{#Answers}}
-					<input type="radio" name="option" value={{option}}>
-						<span>{{option}}</span>
-						{{/Answers}}
+					<input type="radio" name="option" value="">
+						<span>{{this.data.Answers.[0].option}}</span>
+					<input type="radio" name="option" value="">
+						<span>{{this.data.Answers.[1].option}}</span><br>
+					  {{#if this.data.Answers.[2].option}}
+					<input type="radio" name="option" value=""> 
+						<span>{{this.data.Answers.[2].option}}</span>
+						{{/if}}
+						{{#if this.data.Answers.[3].option}}
+					<input type="radio" name="option" value="">
+						<span>{{this.data.Answers.[3].option}}</span>
+						{{/if}}
 				</form> 
 			</div>
 			<button type="submit" class="btn vote-button">Vote</button>
@@ -44,4 +51,3 @@
 			</div>
 		</div>
     </div>
-					{{/each}}
