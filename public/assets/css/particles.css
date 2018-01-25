@@ -1,11 +1,13 @@
 /* ---- reset ---- */ 
 body{ margin:0; font:normal 75% Arial, Helvetica, sans-serif; } 
-canvas{ display: block; vertical-align: bottom;  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e4cfe7+0,6c5a72+100 */
+canvas{ display: block; vertical-align: bottom;  
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e4cfe7+0,6c5a72+100 */
     background: rgb(228,207,231); /* Old browsers */
     background: -moz-linear-gradient(top, rgba(228,207,231,1) 0%, rgba(108,90,114,1) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(top, rgba(228,207,231,1) 0%,rgba(108,90,114,1) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, rgba(228,207,231,1) 0%,rgba(108,90,114,1) 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4cfe7', endColorstr='#6c5a72',GradientType=0 ); /* IE6-9 */ } 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4cfe7', endColorstr='#6c5a72',GradientType=0 ); /* IE6-9 */ }  
+
 /* ---- particles.js container ---- */ 
 #particles-js{position:absolute; top: 0; width: 100%; height: 100%; background-color: #ffffff; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; } 
 /* ---- stats.js ---- */ 
@@ -15,4 +17,6 @@ canvas{ display: block; vertical-align: bottom;  /* Permalink - use to edit and 
 .count-particles{ border-radius: 0 0 3px 3px; display: none;}
 
 canvas {display: none !important;}
-canvas.particles-js-canvas-el {display: initial !important;}
+canvas.particles-js-canvas-el {display: initial !important; background-image: url('https://orig00.deviantart.net/046a/f/2012/364/4/2/space_and_particles_2_by_janrobbe-d5pqhmv.png');
+background-size: cover;
+display: block !important; vertical-align: bottom; position: absolute;}
