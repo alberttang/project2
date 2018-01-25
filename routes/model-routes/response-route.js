@@ -1,5 +1,6 @@
 // REQUIRE THE MODELS FOLDER
 var db = require("../../models");
+var authCont = require('../../controllers/auth-controller.js')
 
 // EXPORT THESE ROUTES 
 module.exports = function (app) {
@@ -9,12 +10,19 @@ module.exports = function (app) {
     */
 
     // POST THE NEW RESPONSE TO THE DB
-    app.post("/api/response", function (req, res) {
+    app.post("/api/response",  function (req, res) {
+        console.log("your route is working!")
         // CONSOLE LOG THE REQUEST BODY
         console.log(req.body);
+        var Response = req.body.Response;
+        // var Poll = req.body.Poll;
+        // var User = req.body.user;
+
         // GET THE ANSWER NUMBER
         db.Response.create({
-            answerId: req.body.answerId
+            answerId: req.body.answerId,
+            PollId: req.body.PollId,
+            UserId: req.body.UserId
         }).then(function (dbAnswer) {
             // PRETTIFY THE THE JSON
             res.json(dbAnswer);
