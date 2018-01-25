@@ -25,17 +25,17 @@
 	<div class="container">
         <h3 class="category-title">My Polls</h3>
         <div class="poll">
-			<div class="poll-question"></div>
+			<div class="poll-question">{{this.data.question}}</div>
 			<div class="poll-answer">
 				<form>
 					<input type="radio" name="option" value="">
-						<span></span>
+						<span>{{this.data.Answers.[0].option}}</span>
 					<input type="radio" name="option" value="">
-						<span></span><br>
+						<span>{{this.data.Answers.[1].option}}</span><br>
 					<input type="radio" name="option" value=""> 
-						<span></span>
+						<span>{{this.data.Answers.[2].option}}</span>
 					<input type="radio" name="option" value="">
-						<span></span>
+						<span>{{this.data.Answers.[3].option}}</span>
 				</form> 
 			</div>
 			<button type="submit" class="btn vote-button">Vote</button>

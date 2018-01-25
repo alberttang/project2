@@ -6,7 +6,7 @@ var salt = 'asdffdsa'
 
 
 exports.login = function (req, res) {
-    res.send({ token: jwt.sign(req.user.dataValues, salt) })
+    res.send({ token: jwt.sign(req.user.dataValues, salt), userName: req.user.userName, userId: req.user.id })
 }
 
 exports.signup = function (req, res) {
@@ -46,8 +46,9 @@ exports.signup = function (req, res) {
 }
 
 function verifyJwt(req, res, done) {
-    jwt.verify(req.headers.Authorization, salt, function (err, decodedUser) {
+    jwt.verify(req.headers.authorization, salt, function (err, decodedUser) {
         if (err) {
+            console.log(err)
             return res.status(401).send({ message: 'user is not authorized' })
         }
         req.user = decodedUser
