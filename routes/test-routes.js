@@ -27,6 +27,12 @@ module.exports = function (app) {
         res.render("index", hbsObject);
     });
 
+    app.get("/signup", function (req, res) {
+        var hbsObject = {
+            name: 1
+        };
+        res.render("signup", hbsObject);
+    });
 
     // app.get("/create-poll",
     // authCont.verifyJwt,
@@ -38,6 +44,16 @@ module.exports = function (app) {
     // });
 
 /* Category Pages */
+
+    // app.get("/signup",
+    //     function(req, res) {
+    //         var hbsObject = {
+    //             name: 1
+    //         }
+    //         res.render("signup", hbsObject);
+    //     });
+    
+
 
     app.get("/create-poll*", 
         //verifyJwt,

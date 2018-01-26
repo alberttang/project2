@@ -9,7 +9,7 @@ canvas{ display: block; vertical-align: bottom;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4cfe7', endColorstr='#6c5a72',GradientType=0 ); /* IE6-9 */ }  
 
 /* ---- particles.js container ---- */ 
-#particles-js{position:absolute; top: 0; width: 100%; height: 100%; background-color: #ffffff; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; } 
+#particles-js{position:absolute; top: 0; width: 100%; height: 120%; background-color: #ffffff; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; } 
 /* ---- stats.js ---- */ 
 .count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; } 
 .js-count-particles{ font-size: 1.1em; } 
@@ -18,5 +18,5 @@ canvas{ display: block; vertical-align: bottom;
 
 canvas {display: none !important;}
 canvas.particles-js-canvas-el {display: initial !important; background-image: url('https://orig00.deviantart.net/046a/f/2012/364/4/2/space_and_particles_2_by_janrobbe-d5pqhmv.png');
-background-size: cover;
+background-size: cover; background-attachment: fixed !important;
 display: block !important; vertical-align: bottom; position: absolute;}
