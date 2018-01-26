@@ -25,20 +25,24 @@ module.exports = function (app) {
         ================= GET ==================== 
     */
 
-    // GET THE POLL INFO
+    // GET SPECIFIC RESPONSE
     app.get("/api/response/:id", function (req, res) {
         // CONSOLE LOG THE REQUEST BODY
         console.log(req.body);
         // GET THE USER MODEL 
         db.Response.findAll({
             // FIND WHERE THE USERNAME IS THE SAME AS REQ.BODY
+            include: [db.answerId],
             where: {
                 id: req.params.id
             }
         }).then(function (dbAuthor) {
-            res.json(dbAuthor);
+            // console.log(dbAuthor.data);            
+            // res.json(dbAuthor);
+            res.render("mypolls", {
+                data: dbAuthor })
         });
-    }); // END GET 
+    }); // END GET
 
     /*
         ================= DELETE ==================== 

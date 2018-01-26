@@ -50,17 +50,12 @@ module.exports = function (app) {
             where: {
                 id: req.params.id
             }
-<<<<<<< HEAD
-        }).then(function (dbPoll) {
-            res.json(dbPoll);
-=======
         }).then(function (dbAuthor) {
             // console.log(dbAuthor.data);            
             // res.json(dbAuthor);
             res.render("mypolls", {
                 data: dbAuthor })
 
->>>>>>> ffc954bbc3c052c3d7e7db829b843b7effde5b87
         });
     }); // END GET
 
