@@ -51,11 +51,6 @@ module.exports = function (sequelize, DataTypes) {
             // When a User is deleted, also delete any associated Responses
             onDelete: "cascade"
         });
-        // Associating User with Answer 
-        // User.hasMany(models.Answer, {
-        //     // When a User is deleted, also delete any associated Responses
-        //     onDelete: "cascade"
-        // });
     };
 
     return User;

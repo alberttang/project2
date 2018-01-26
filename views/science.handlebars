@@ -1,13 +1,13 @@
-<!-- particles.js container --> 
-	<div id="particles-js"></div> 
-	<!-- stats - count particles --> 
-	<div class="count-particles"> 
-		<span class="js-count-particles">--</span> particles 
-	</div> 
-	<!-- particles.js lib - https://github.com/VincentGarreau/particles.js --> 
-	<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-	<!-- stats.js lib --> 
-	<script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+<!-- particles.js container -->
+<div id="particles-js"></div>
+<!-- stats - count particles -->
+<div class="count-particles">
+	<span class="js-count-particles">--</span> particles
+</div>
+<!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<!-- stats.js lib -->
+<script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
 
 	<div class="header">
 		<div class="block-alpha">
@@ -36,27 +36,37 @@
 			</a>
 		</div>
 	</div>
+	
 
-	<div class="container">
-        <h3 class="category-title">Science</h3>
-        <div class="poll">
-			<div class="poll-question">Do you like lasers?</div>
-			<div class="poll-answer">
-				<form>
-					<input type="radio" name="option" value="">
-						<span>Yes</span>
-					<input type="radio" name="option" value="">
-						<span>No</span><br>
-					<input type="radio" name="option" value=""> 
-						<span>They aren't used in the cool way</span>
-					<input type="radio" name="option" value="">
-						<span>Fuck lasers</span>
-				</form> 
+<div class="container">
+
+	<h3 class="category-title">Science</h3>
+	<div class="poll">
+		<div class="poll-question">Do you like lasers?</div>
+		<div class="poll-answer">
+			<form>
+				<input type="radio" name="option" value="">
+				<span>Yes</span>
+				<input type="radio" name="option" value="">
+				<span>No</span>
+				<br>
+				<input type="radio" name="option" value="">
+				<span>They aren't used in the cool way</span>
+				<input type="radio" name="option" value="">
+				<span>Fuck lasers</span>
+			</form>
+		</div>
+		<button type="submit" class="btn vote-button">Vote</button>
+		<div class="total-votes">
+			<i class="small material-icons">insert_chart</i>
+			<div class="vote-counter"></div>
+			{{!-- CHART BEGINS --}}
+			<div class="results">
+				<div id="myDiv">
+					<!-- Plotly chart will be drawn inside this DIV -->
+				</div>
 			</div>
-			<button type="submit" class="btn vote-button">Vote</button>
-			<div class="total-votes">
-				<i class="small material-icons">insert_chart</i>
-				<div class="vote-counter"></div>
-			</div>
+			{{!-- CHART ENDS --}}
 		</div>
     </div>
+</div>

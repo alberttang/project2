@@ -1,13 +1,13 @@
-<!-- particles.js container --> 
-	<div id="particles-js"></div> 
-	<!-- stats - count particles --> 
-	<div class="count-particles"> 
-		<span class="js-count-particles">--</span> particles 
-	</div> 
-	<!-- particles.js lib - https://github.com/VincentGarreau/particles.js --> 
-	<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-	<!-- stats.js lib --> 
-	<script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+<!-- particles.js container -->
+<div id="particles-js"></div>
+<!-- stats - count particles -->
+<div class="count-particles">
+	<span class="js-count-particles">--</span> particles
+</div>
+<!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<!-- stats.js lib -->
+<script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
 
 	<div class="header">
 		<div class="block-alpha">
@@ -36,33 +36,42 @@
 			</a>
 		</div>
 	</div>
+	
 {{#each this.data}}
-	<div class="container">
-        <h3 class="category-title">{{category}}</h3>
-        <div class="poll">
-			<div class="poll-question">
-				{{question}}
-			</div>
-			<div class="poll-answer">
-				<form>
-					{{#Answers}}
-					<input type="radio" name="option" value={{option}}>
-						<span>{{option}}</span>
-						{{/Answers}}
-					{{!-- <input type="radio" name="option" value="">
-						<span>Fresh meat</span><br>
-					<input type="radio" name="option" value=""> 
-						<span>Small children</span>
-					<input type="radio" name="option" value="">
-						<span>Slightly larger children</span> --}}
-				</form> 
-			</div>
-			<button type="submit" class="btn vote-button">Vote</button>
-			<div class="total-votes">
-				<i class="small material-icons">insert_chart</i>
-				<div class="vote-counter"></div>
-			</div>
+<div class="container">
+	<h3 class="category-title">{{category}}</h3>
+	<div class="poll">
+		<div class="poll-question">
+			{{question}}
 		</div>
-    </div>
-					{{/each}}
+		<div class="poll-answer">
+			<form>
+				{{#Answers}}
+				<input type="radio" name="option" value={{option}}>
+				<span>{{option}}</span>
+				{{/Answers}} {{!--
+				<input type="radio" name="option" value="">
+				<span>Fresh meat</span>
+				<br>
+				<input type="radio" name="option" value="">
+				<span>Small children</span>
+				<input type="radio" name="option" value="">
+				<span>Slightly larger children</span> --}}
+			</form>
+		</div>
+		<button type="submit" class="btn vote-button">Vote</button>
+		<div class="total-votes">
+			<i class="small material-icons">insert_chart</i>
+			<div class="vote-counter"></div>
+			{{!-- CHART BEGINS --}}
+			<div class="results">
+				<div id="myDiv">
+					<!-- Plotly chart will be drawn inside this DIV -->
+				</div>
+			</div>
+			{{!-- CHART ENDS --}}
+		</div>
+	</div>
+</div>
+{{/each}}
 
