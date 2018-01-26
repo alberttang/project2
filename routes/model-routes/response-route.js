@@ -40,14 +40,28 @@ module.exports = function (app) {
         // GET THE USER MODEL 
         db.Response.findAll({
             // FIND WHERE THE USERNAME IS THE SAME AS REQ.BODY
-            include: [db.answerId],
+            include: [db.Poll],            
             where: {
-                id: req.params.id
+                PollId: req.params.id
             }
         }).then(function (dbAuthor) {
             // res.json(dbAuthor);
         });
     }); // END GET
+
+
+    // GET THE POLL INFO
+    app.get("/api/response-count/:id", function (req, res) {
+        // CONSOLE LOG THE REQUEST BODY
+        console.log(req.body);
+        // GET THE USER MODEL 
+       
+        // db.sequelize.query(“select * from sometable;);
+        db.sequelize.query("SELECT Answers.num, COUNT(*) FROM Answers JOIN Responses ON Answers.id = Responses.answerId AND Answers.PollId=3 GROUP BY Answers.num", { type: db.sequelize.QueryTypes.SELECT})
+        .then(function (dbAuthor) {
+                res.json(dbAuthor);
+            });
+    }); // END GET 
 
     /*
         ================= DELETE ==================== 
