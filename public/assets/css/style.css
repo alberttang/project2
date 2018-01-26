@@ -130,7 +130,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .next { right: 5em; }
 .prev { left: 5em; }
 
-/* Polls */
+/* -Polls- */
 
 .home-container .poll-category {color: #333; text-shadow: none; border-bottom: 1px solid #98859d;}
 .home-container .poll-question {line-height: 1em; color: #000; text-shadow: none; font-size: .7em;

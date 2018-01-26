@@ -5,7 +5,7 @@ module.exports = function (sequelize, DataTypes) {
     */
 
     var Response = sequelize.define("Response", {
-        answerId: {
+        chosen: {
             type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
