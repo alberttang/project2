@@ -20,6 +20,21 @@
 				<button type="submit" class="btn">Create Poll</button>
 			</a>
 		</div>
+		<div class="block-omega">
+			<div class="log-form">
+				<form >
+				{{!-- action="/api/auth/login" method="post" --}}
+					<input type="text" id="username" name="userName" title="username" placeholder="username" />
+					<input type="password" id="password" name="password" title="username" placeholder="password" />
+					<button type="button" id="loginBtn" class="btn login">Login</button>
+					<a class="forgot" href="#">Forgot Username?</a>
+				</form>
+				<button id="signup-button" class="signup" onclick="document.getElementById('signup').style.display='block'" style="width:auto;">Sign Up</button>
+			</div>
+			<a href="#">
+				<button id="my-polls_top" class="btn my-polls">My Polls</button>
+			</a>
+		</div>
 	</div>
 
 	<div class="container">
@@ -45,16 +60,3 @@
 			</div>
 		</div>
     </div>
-
-
-<!-- start log in form -->
-
-<div class="log-form">
-	<form>
-		<input type="text" title="username" placeholder="username" />
-		<input type="password" title="username" placeholder="password" />
-		<button type="submit" class="btn">Login</button>
-		<a class="forgot" href="#">Forgot Username?</a>
-	</form>
-</div>
-<!--end log form -->
