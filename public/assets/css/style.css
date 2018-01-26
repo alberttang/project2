@@ -22,6 +22,7 @@ a {color: #74338a;}
 background: rgba(255,255,255,0.5);}
 .header .block-alpha {width: 30%; float: left;}
 .header .block-beta {width: 70%;}
+.header .block-omega {width: 20%; float: right;}
 
 @import "compass/css3";
 
@@ -171,9 +172,10 @@ a.forgot {float: left;}
 
 button.btn.login {height: 18px !important; font-size: 1em; line-height: 1.5em;}
 
+.js-plotly-plot .plotly .modebar {display: none;}
+
 
 .log-form {
-  width: 20%;
   min-width: 320px;
   max-width: 475px;
  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6393c1+0,cfe7fa+100 */
