@@ -57,7 +57,7 @@ module.exports = function (app) {
         // GET THE USER MODEL 
        
         // db.sequelize.query(“select * from sometable;);
-        db.sequelize.query("SELECT Answers.num, COUNT(*) FROM Answers JOIN Responses ON Answers.id = Responses.answerId AND Answers.PollId=3 GROUP BY Answers.num", { type: db.sequelize.QueryTypes.SELECT})
+        db.sequelize.query("SELECT Answers.num, COUNT(*) FROM Answers JOIN Responses ON Answers.id = Responses.answerId AND Answers.PollId="+req.params.id+" GROUP BY Answers.num", { type: db.sequelize.QueryTypes.SELECT})
         .then(function (dbAuthor) {
                 res.json(dbAuthor);
             });
