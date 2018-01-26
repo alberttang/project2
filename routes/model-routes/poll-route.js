@@ -21,19 +21,19 @@ module.exports = function (app) {
             category: req.body.category,
             UserId: req.body.UserId
         }).then(function (response) {
-            console.log("yo",response)
-            answers.forEach(function(answer) {
+            console.log("yo", response)
+            answers.forEach(function (answer) {
                 answer.PollId = response.id;
             })
             console.log(answers)
-           return db.Answer.bulkCreate(answers)
+            return db.Answer.bulkCreate(answers)
         })
-        .then(function(response) {
-            res.json(response);
-        })
-        .catch(function(err) {
-            console.log(err);
-        });
+            .then(function (response) {
+                res.json(response);
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
     }); // END POST
 
     /*
@@ -52,10 +52,11 @@ module.exports = function (app) {
                 id: req.params.id
             }
         }).then(function (dbAuthor) {
-            console.log(dbAuthor);            
+            console.log(dbAuthor);
             // res.json(dbAuthor);
             res.render("newpoll", {
-                data: dbAuthor })
+                data: dbAuthor
+            })
 
         });
     }); // END GET
@@ -72,10 +73,11 @@ module.exports = function (app) {
                 UserId: req.params.id
             }
         }).then(function (dbAuthor) {
-            console.log(dbAuthor);            
+            console.log(dbAuthor);
             // res.json(dbAuthor);
             res.render("mypolls", {
-                data: dbAuthor })
+                data: dbAuthor
+            })
 
         });
     }); // END GET
@@ -95,7 +97,8 @@ module.exports = function (app) {
             // console.log(dbAuthor.data);            
             // res.json(dbAuthor);
             res.render("popular", {
-                data: dbAuthor })
+                data: dbAuthor
+            })
 
         });
     }); // END GET
@@ -106,29 +109,39 @@ module.exports = function (app) {
         console.log(req.body);
         // GET ALL POLLS
         db.Poll.findAll({
-            include: [db.Answer]
+            include: [db.Answer, db.User],
+            where: {
+                category: "personal"
+            }
         }).then(function (dbAuthor) {
-            res.json(dbAuthor);
-        });
-    }); // END GET
+            var personal = dbAuthor;
+            db.Poll.findAll({
+                include: [db.Answer, db.User],
+                where: {
+                    category: "entertainment"
+                }
+            })}).then(function(response) {
 
-    /*
-        ================= DELETE ==================== 
-    */
+                res.json(response);
+            });
+        });// END GET
+        /*
+            ================= DELETE ==================== 
+        */
 
-    // DELETE route for deleting polls
-    app.delete("/api/poll/:id", function (req, res) {
-        // CONSOLE LOG THE REQUEST OBJ
-        console.log(req.body);
-        // DELETE THE ID IN THE DB
-        db.Poll.destroy({
+        // DELETE route for deleting polls
+        app.delete("/api/poll/:id", function (req, res) {
+            // CONSOLE LOG THE REQUEST OBJ
+            console.log(req.body);
+            // DELETE THE ID IN THE DB
+            db.Poll.destroy({
                 where: {
                     id: req.params.id
                 }
             })
-            .then(function (dbPost) {
-                res.json(dbPost);
-            });
-    }); // END DELETE
+                .then(function (dbPost) {
+                    res.json(dbPost);
+                });
+        }); // END DELETE
 
-}; // END EXPORT
+    }; // END EXPORT
