@@ -22,6 +22,7 @@ a {color: #74338a;}
 background: rgba(255,255,255,0.5);}
 .header .block-alpha {width: 30%; float: left;}
 .header .block-beta {width: 70%;}
+.header .block-omega {width: 20%; float: right;}
 
 @import "compass/css3";
 
