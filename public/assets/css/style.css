@@ -1,4 +1,6 @@
 
+html {height: 100%;}
+
 body {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#98bede+0,deefff+100 */
   background: #98bede; /* Old browsers */
   background: -moz-linear-gradient(top, #98bede 0%, #deefff 100%); /* FF3.6-15 */
@@ -7,6 +9,8 @@ body {/* Permalink - use to edit and share this gradient: http://colorzilla.com/
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#98bede', endColorstr='#deefff',GradientType=0 ); /* IE6-9 */
   background-repeat: no-repeat;
   font: 15px/20px Arial, sans-serif;
+  height: 100%;
+  position: relative;
 }
 
 h3 {border-bottom: 2px solid #98859d;}
@@ -147,6 +151,7 @@ i.small {float: left;}
 .vote-counter {float: left; font-size: 1.8em;}
 
 .my-polls {position: relative;}
+.my-polls_top {display: none;}
 
 
 
