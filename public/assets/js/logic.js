@@ -37,6 +37,7 @@ $('.vote-button').click(function () {
 // });
 
 $(function () {
+
     $(".login").on("click", function (event) {
         event.preventDefault();
         if (document.getElementById('loginBtn').innerHTML === 'Sign out') {
@@ -57,6 +58,7 @@ $(function () {
                 document.getElementById('username').remove()
                 document.getElementById('password').remove()
                 document.getElementById('signup-button').remove()
+                document.getElementById('my-polls_top').style.display()
                 document.getElementById('loginBtn').innerHTML = 'Sign out ' + sessionStorage.userName
                 document.getElementById('loginBtn').onClick = function (event) {
                     sessionStorage.clear()
