@@ -9,6 +9,7 @@
 <!-- stats.js lib -->
 <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
 
+<!--HEADER BEGINS -->
 <div class="header">
 	<div class="block-alpha">
 		<a href="/">
@@ -21,13 +22,15 @@
 		</a>
 	</div>
 </div>
+<!-- HEADER ENDS -->
 
+<!-- CONTAINER BEGINS -->
 <div class="container">
 	<h3 class="category-title">{{this.data.User.userName}} Poll #{{this.data.id}}</h3>
 	<div class="poll">
 		<div class="poll-question">{{this.data.question}}</div>
 		<div class="poll-question">{{this.data.category}}</div>
-
+		<!-- POLL ANSWER -->
 		<div class="poll-answer">
 			<form>
 				<input type="radio" name="option" value="">
@@ -48,12 +51,14 @@
 			<i class="small material-icons">insert_chart</i>
 			<div class="vote-counter"></div>
 		</div>
-		{{!-- CHART BEGINS --}}
+		<!-- POLL ANSWER ENDS -->
+		<!-- CHART BEGINS -->
 		<div class="results">
 			<div id="myDiv">
 				<!-- Plotly chart will be drawn inside this DIV -->
 			</div>
 		</div>
-		{{!-- CHART ENDS --}}
+		<!-- CHART ENDS -->
 	</div>
 </div>
+<!-- CONTAINER ENDS -->

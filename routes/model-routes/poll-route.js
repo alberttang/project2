@@ -1,4 +1,6 @@
-var authCont = require('../../controllers/auth-controller.js')
+// USER AUTHENTICATION CONTROLLER
+var authCont = require('../../controllers/auth-controller.js');
+
 // REQUIRE THE MODELS FOLDER
 var db = require("../../models");
 

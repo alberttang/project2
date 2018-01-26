@@ -1,3 +1,5 @@
+// CAROUSEL JS PROVIDES THE LOGIC FOR THE INDEX PAGE CAROUSEL
+
 var carousel = $(".carousel"),
     currdeg  = 0;
 

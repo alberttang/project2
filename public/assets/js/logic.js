@@ -8,34 +8,6 @@ $('.vote-button').click(function () {
     console.log(votes);
 })
 
-// trying to figure out how to remove login form on page load
-
-// $( document ).ready(function() {
-
-//     var username = sessionStorage.userId;
-//     var password = document.getElementById('password').value
-
-//     $.post("/api/auth/login", { userName: username, password: password }, function (data, status) {
-//         console.log(status)
-//         console.log(data)
-//         if (status === "success") {
-//             sessionStorage.userId = data.userId
-//             sessionStorage.jwt = data.token
-//             sessionStorage.userName = data.userName
-//             document.getElementById('username').remove()
-//             document.getElementById('password').remove()
-//             document.getElementById('loginBtn').innerHTML = 'Sign out ' + sessionStorage.userName
-//             document.getElementById('loginBtn').onClick = function (event) {
-//                 sessionStorage.clear()
-//                 location.reload()
-//             }
-//         }
-
-//     });
-
-
-// });
-
 $(function () {
 
     $(".login").on("click", function (event) {

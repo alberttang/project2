@@ -1,7 +1,6 @@
 
 // INDEX FILE DECLARES THE USE OF SEQUELIZE AND ALLOWS US TO USE THE SYNTAX AFTER REQUIRING THE FOLDER
 'use strict';
-
 var fs        = require('fs');
 var path      = require('path');
 var Sequelize = require('sequelize');

@@ -8,8 +8,7 @@
 <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <!-- stats.js lib -->
 <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
-
-{{!-- HEADER BEGINS --}}
+<!-- HEADER -->
 <div class="header">
 	<div class="block-alpha">
 		<a href="/">
@@ -25,36 +24,26 @@
 		<div class="log-form">
 			<form>
 				{{!-- action="/api/auth/login" method="post" --}}
-<<<<<<< HEAD
 				<input type="text" id="username" name="userName" title="username" placeholder="username" />
 				<input type="password" id="password" name="password" title="username" placeholder="password" />
 				<button type="button" id="loginBtn" class="btn login">Login</button>
 				<a class="forgot" href="#">Forgot Username?</a>
 			</form>
 			<button id="signup-button" class="signup" onclick="document.getElementById('signup').style.display='block'" style="width:auto;">Sign Up</button>
-=======
-					<input type="text" id="username" name="userName" title="username" placeholder="username" />
-					<input type="password" id="password" name="password" title="username" placeholder="password" />
-					<button type="button" id="loginBtn" class="btn login">Login</button>
-					<a class="forgot" href="#">Forgot Username?</a>
-				</form>
-				<button id="signup-button" class="signup" onclick="document.getElementById('signup').style.display='block'" style="width:auto;">Sign Up</button>
-			</div>
-			<a href="#">
-				<button id="my-polls_top" class="btn my-polls">My Polls</button>
-			</a>
->>>>>>> 3616b22d66eee032e87c019b3b1b2dcbea610890
 		</div>
-		<a href="/my-polls">
-			<button class="btn my-polls">My Polls</button>
+		<a href="#">
+			<button id="my-polls_top" class="btn my-polls">My Polls</button>
 		</a>
 	</div>
+	<a href="/my-polls">
+		<button class="btn my-polls">My Polls</button>
+	</a>
 </div>
-{{!-- HEADER ENDS --}}
-
+<!-- END HEADER -->
+<!-- MAIN -->
 <div class="main">
 	<div class="home-container">
-		{{!-- CAROUSEL BEGINS --}}
+		<!-- CAROUSEL -->
 		<div class="carousel">
 			<div class="item a">
 				<h5 class="poll-category">
@@ -80,13 +69,13 @@
 						<i class="small material-icons">insert_chart</i>
 						<div class="vote-counter"></div>
 					</div>
-					{{!-- CHART BEGINS --}}
+					<!-- CHART -->
 					<div class="results">
 						<div id="myDiv">
 							<!-- Plotly chart will be drawn inside this DIV -->
 						</div>
 					</div>
-					{{!-- CHART ENDS --}}
+					<!-- END CHART -->
 				</div>
 			</div>
 			<div class="item b">
@@ -115,21 +104,22 @@
 				</h5>
 			</div>
 		</div>
-		{{!-- CAROUSEL ENDS --}}
+		<!-- END CAROUSEL -->
 	</div>
 </div>
+<!-- END MAIN -->
+<!-- CAROUSEL BUTTONS -->
 <div class="next">Next</div>
 <div class="prev">Prev</div>
-</div>
-
+<!-- END CAROUSEL BUTTONS -->
+<!-- MY POLLS BUTTON -->
 <div></div>
 <a href="# ">
 	<button class="btn my-polls">My Polls</button>
 </a>
 </div>
-
-{{!-- /* Signup form */ --}}
-
+<!-- END MY POLLS BUTTON -->
+<!-- SIGNUP -->
 <div id="signup" class="modal">
 	<span onclick="document.getElementById('signup').style.display='none'" class="close" title="Close Modal">&times;</span>
 	<form class="modal-content" method="post" action="/api/auth/signup">
@@ -169,9 +159,10 @@
 		</div>
 	</form>
 </div>
-
-{{!-- SCRIPT BEGINS --}}
+<!-- END SIGNUP -->
+<!-- JS SCRIPT -->
 <script>
+
 	// Get the modal
 	var modal = document.getElementById('signup');
 
@@ -180,10 +171,11 @@
 		if (event.target == modal) {
 			modal.style.display = "none";
 		}
-	}
-</script> {{!-- SCRIPT ENDS --}}
+	};
 
-
+</script>
+<!-- END JS SCRIPT -->
+<!-- CDN SCRIPTS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/carousel.js"></script>
 <script src="js/particles.js"></script>
