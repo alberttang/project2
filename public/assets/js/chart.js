@@ -7,9 +7,15 @@
 
 
 console.log(this.data)
+var chartsData = []
+// array of all poll Ids
+var a = document.getElementsByName('pollhack')
+for(var i = 0; i < a.length; i++) {
+  $.get("/api/response-count/" + a[i].innerHTML, function (data, status) {
+    console.log(data)
 
-var a = document.getElementsByName('polls')
-console.log(a)
+  });
+}
 
 
 

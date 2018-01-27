@@ -72,19 +72,10 @@ module.exports = function (app) {
                 UserId: req.params.id
             }
         }).then(function (dbAuthor) {
-            db.sequelize.query("SELECT Answers.num, COUNT(*) FROM Answers JOIN Responses ON Answers.id = Responses.answerId AND Answers.PollId=" + req.params.id + " GROUP BY Answers.num", { type: db.sequelize.QueryTypes.SELECT })
-            .then(function (pollResponses) {
-                console.log(dbAuthor.dataValues)
-                console.log(pollResponses.dataValues)
                 res.render("mypolls", {
                     data: dbAuthor,
-                    pollResponses: pollResponses
                 })            
             });
-
-            
-
-        });
     }); // END GET
 
     // GET SPECIFIC POLL INFO
