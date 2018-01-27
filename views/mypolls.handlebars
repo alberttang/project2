@@ -26,10 +26,11 @@
 	<div class="container">
         <h3 class="category-title">{{category}}</h3>
         <div class="poll">
-			<div class="poll-question" pid="{{id}}">
+			<a href="/api/poll/{{id}}" ><div class="poll-question" pid="{{id}}">
+
 				{{question}}
-			</div>
-			<div class="poll-answer">
+			</div></a>
+			{{!-- <div class="poll-answer">
 				<form>
 					{{#Answers}}
 					<input type="radio" pollId="{{PollId}}" optid="{{id}}" name="option" value="{{option}}">
@@ -44,7 +45,7 @@
 			</div>
 			<div class="results">
 				 <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
-			</div>
+			</div> --}}
 		</div>
     </div>
 					{{/each}}
