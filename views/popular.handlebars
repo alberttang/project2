@@ -31,15 +31,10 @@
 			<div class="poll-answer">
 				<form>
 					{{#Answers}}
-					<input type="radio" name="option" value={{option}}>
+					<input type="radio" pollId="{{PollId}}" optid="{{id}}" name="option" value="{{option}}">
 						<span>{{option}}</span>
 						{{/Answers}}
-					{{!-- <input type="radio" name="option" value="">
-						<span>Fresh meat</span><br>
-					<input type="radio" name="option" value=""> 
-						<span>Small children</span>
-					<input type="radio" name="option" value="">
-						<span>Slightly larger children</span> --}}
+			
 				</form> 
 			</div>
 			<button type="submit" class="btn vote-button">Vote</button>

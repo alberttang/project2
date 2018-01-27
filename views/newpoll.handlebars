@@ -30,17 +30,17 @@
 
 			<div class="poll-answer">
 				<form>
-					<input type="radio" name="option" value="">
-						<span>{{this.data.Answers.[0].option}}</span>
-					<input type="radio" name="option" value="">
+					<input type="radio" pollId="{{this.data.Answers.[0].PollId}}" optid="{{this.data.Answers.[0].id}}" name="option" value="{{this.data.Answers.[0].option}}">
+						<span>{{this.data.Answers.[0].option}}</span><br>
+					<input type="radio" pollId="{{this.data.Answers.[1].PollId}}" optid="{{this.data.Answers.[1].id}}" name="option" value="{{this.data.Answers.[1].option}}">
 						<span>{{this.data.Answers.[1].option}}</span><br>
 					  {{#if this.data.Answers.[2].option}}
-					<input type="radio" name="option" value=""> 
-						<span>{{this.data.Answers.[2].option}}</span>
+					<input type="radio" pollId="{{this.data.Answers.[2].PollId}}" optid="{{this.data.Answers.[2].id}}" name="option" value="{{this.data.Answers.[2].option}}">
+						<span>{{this.data.Answers.[2].option}}</span><br>
 						{{/if}}
 						{{#if this.data.Answers.[3].option}}
-					<input type="radio" name="option" value="">
-						<span>{{this.data.Answers.[3].option}}</span>
+					<input type="radio" pollId="{{this.data.Answers.[3].PollId}}" optid="{{this.data.Answers.[3].id}}" name="option" value="{{this.data.Answers.[3].option}}">
+						<span>{{this.data.Answers.[3].option}}</span><br>
 						{{/if}}
 				</form> 
 			</div>

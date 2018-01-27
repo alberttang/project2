@@ -32,7 +32,7 @@
 			<div class="poll-answer">
 				<form>
 					{{#Answers}}
-					<input type="radio" name="option" value={{option}}>
+					<input type="radio" pollId="{{PollId}}" optid="{{id}}" name="option" value="{{option}}">
 						<span>{{option}}</span>
 						{{/Answers}}
 				</form> 
