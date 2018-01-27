@@ -1,0 +1,49 @@
+<!-- particles.js container --> 
+	<div id="particles-js"></div> 
+	<!-- stats - count particles --> 
+	<div class="count-particles"> 
+		<span class="js-count-particles">--</span> particles 
+	</div> 
+	<!-- particles.js lib - https://github.com/VincentGarreau/particles.js --> 
+	<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+	<!-- stats.js lib --> 
+	<script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+
+	<div class="header">
+		<div class="block-alpha">
+			<a href="/">
+				<div class="logo">PollIt - My Polls</div>
+			</a>
+		</div>
+		<div class="block-beta">
+			<a href="/create-poll.html">
+				<button type="submit" class="btn">Create Poll</button>
+			</a>
+		</div>
+	</div>
+
+	<div class="container">
+        <h3 class="category-title"> Poll Result</h3>
+        <div class="poll">
+					<div class="poll-question result-question">What is Harambe's favorite food?</div>
+					<div class="poll-answer">
+						<form>
+							<span>Bananas</span>
+							<div class="progress">
+								<div class="determinate" style="width: 50%"></div>
+							</div><br>
+							<span>Fresh meat</span>
+							<div class="progress">
+								<div class="indeterminate" style="width: 30%"></div>
+							</div><br>
+							<span>Small children</span>
+							<div class="progress">
+								<div class="determinate" style="width: 10%"></div>
+							</div><br>
+							<span>Slightly larger children</span>
+							<div class="progress">
+								<div class="determinate" style="width: 10%"></div>
+							</div><br>
+						</form>
+					</div>
+    </div>

@@ -33,6 +33,13 @@ module.exports = function (app) {
         };
         res.render("signup", hbsObject);
     });
+    app.get("/result", function (req, res) {
+        var hbsObject = {
+            name: 1
+        };
+        res.render("index-result", hbsObject);
+    });
+
 
     // app.get("/create-poll",
     // authCont.verifyJwt,
