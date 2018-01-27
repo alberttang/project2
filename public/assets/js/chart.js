@@ -1,10 +1,10 @@
-// var data = [{
-//   values: [19, 26, 55],
-//   labels: ['1', '2', '3'],
-//   type: 'pie'
-// }];
+var data = [{
+  values: [19, 26, 55],
+  labels: ['1', '2', '3'],
+  type: 'pie'
+}];
 
-// DATA CONSTRUCTOR
+/* // DATA CONSTRUCTOR
 var Data = function (value, label, type) {
   // VALUE
   this.value = value;
@@ -12,7 +12,7 @@ var Data = function (value, label, type) {
   this.label = label;
   // TYPE
   this.type = type;
-}; // END DATA CONSTRUCTOR
+}; // END DATA CONSTRUCTOR */
 
 var layout = {
   autosize: false,
@@ -31,11 +31,11 @@ var layout = {
 
 Plotly.newPlot('myDiv', data, layout);
 
-
+/* 
 var Data = function (value, label, type) {
   this.value = value;
   this.label = label;
   this.type = type;
 };
 
-module.exports = Data;
+module.exports = Data; */
