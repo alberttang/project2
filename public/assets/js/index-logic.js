@@ -19,7 +19,7 @@ function populatePoll(question, category, option1, pID, oID) {
     personalInput.after(perSpan);
     var ques1 = $("." + per + "-question");
     ques1.html(question);
-
+    ques1.attr("pollId",pID);
     console.log(option1);
     console.log(category);
     console.log(question);
