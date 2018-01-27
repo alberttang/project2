@@ -72,12 +72,10 @@ module.exports = function (app) {
                 UserId: req.params.id
             }
         }).then(function (dbAuthor) {
-            console.log(dbAuthor);            
-            // res.json(dbAuthor);
-            res.render("mypolls", {
-                data: dbAuthor })
-
-        });
+                res.render("mypolls", {
+                    data: dbAuthor,
+                })            
+            });
     }); // END GET
 
     // GET SPECIFIC POLL INFO

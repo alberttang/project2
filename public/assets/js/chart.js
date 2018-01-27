@@ -1,6 +1,35 @@
+// $(document).ready(function () {
+//   $.get("/api/")
+//   $.get("/api/response-count/:id", function (data, status) {
+//     alert("Data: " + data + "\nStatus: " + status);
+//   });
+// });
+
+
+console.log(this.data)
+var chartsData = []
+// array of all poll Ids
+var a = document.getElementsByName('pollhack')
+for(var i = 0; i < a.length; i++) {
+  $.get("/api/response-count/" + a[i].innerHTML, function (data, status) {
+    console.log(data)
+
+  });
+}
+
+
+
+
+
+
+
+
+
+
+
 
 var data = [{
-  values: [19, 26, 55],
+  values: [response[0].count, response[1].count, response[2].count],
   labels: ['1', '2', '3'],
   type: 'pie'
 }];

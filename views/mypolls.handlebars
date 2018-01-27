@@ -8,6 +8,7 @@
 	<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 	<!-- stats.js lib --> 
 	<script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+	<script src="public/assets/js/chart.js"></script>
 
 	<div class="header">
 		<div class="block-alpha">
@@ -38,9 +39,10 @@
 	</div>
 
 {{#each this.data}}
-	<div class="container">
+	<div name="polls" class="container">
         <h3 class="category-title">{{category}}</h3>
         <div class="poll">
+			<div name="pollhack" style="display:none">{{id}}</div>
 			<div class="poll-question" pid="{{id}}">
 				{{question}}
 			</div>
@@ -59,7 +61,7 @@
 			</div>
 			{{!-- CHART BEGINS --}}
 			<div class="results">
-				 <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+				 <div id="{{id}}"><!-- Plotly chart will be drawn inside this DIV --></div>
 			</div>
 			{{!-- CHART ENDS --}}
 		</div>
