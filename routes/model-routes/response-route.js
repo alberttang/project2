@@ -45,7 +45,7 @@ module.exports = function (app) {
                 PollId: req.params.id
             }
         }).then(function (dbAuthor) {
-            // res.json(dbAuthor);
+            res.json(dbAuthor);
         });
     }); // END GET
 

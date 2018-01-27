@@ -39,36 +39,43 @@
 	
 </div>
 
-<div class="container">
-	<h3 class="category-title">{{this.data.User.userName}} Poll #{{this.data.id}}</h3>
-	<div class="poll">
-		<div class="poll-question">{{this.data.question}}</div>
-		<div class="poll-question">{{this.data.category}}</div>
+	<div class="container">
+        <h3 class="category-title">{{this.data.User.userName}} Poll #{{this.data.id}}</h3>
+        <div class="poll">
+			<div class="poll-question" pid="{{this.data.id}}">{{this.data.question}}</div>
+			<div class="poll-question">{{this.data.category}}</div>
 
-		<div class="poll-answer">
-			<form>
-				<input type="radio" name="option" value="">
-				<span>{{this.data.Answers.[0].option}}</span>
-				<input type="radio" name="option" value="">
-				<span>{{this.data.Answers.[1].option}}</span>
-				<br> {{#if this.data.Answers.[2].option}}
-				<input type="radio" name="option" value="">
-				<span>{{this.data.Answers.[2].option}}</span>
-				{{/if}} {{#if this.data.Answers.[3].option}}
-				<input type="radio" name="option" value="">
-				<span>{{this.data.Answers.[3].option}}</span>
-				{{/if}}
-			</form>
-		</div>
-		<button type="submit" class="btn vote-button">Vote</button>
-		<div class="total-votes">
-			<i class="small material-icons">insert_chart</i>
-			<div class="vote-counter"></div>
-		</div>
-		{{!-- CHART BEGINS --}}
-		<div class="results">
-			<div id="myDiv">
-				<!-- Plotly chart will be drawn inside this DIV -->
+			<div class="poll-answer">
+				<form>
+					<input class="radio-button" type="radio" pollId="{{this.data.Answers.[0].PollId}}" optid="{{this.data.Answers.[0].id}}" name="option" value="{{this.data.Answers.[0].option}}">
+						<span>{{this.data.Answers.[0].option}}</span>
+						<div class="progress" style="display: none">
+								<div class="determinate result1" ></div>
+							</div><br>
+					<input class="radio-button" type="radio" pollId="{{this.data.Answers.[1].PollId}}" optid="{{this.data.Answers.[1].id}}" name="option" value="{{this.data.Answers.[1].option}}">
+						<span>{{this.data.Answers.[1].option}}</span>
+						<div class="progress" style="display: none">
+								<div class="determinate result2" ></div>
+							</div><br>
+					  {{#if this.data.Answers.[2].option}}
+					<input class="radio-button" type="radio" pollId="{{this.data.Answers.[2].PollId}}" optid="{{this.data.Answers.[2].id}}" name="option" value="{{this.data.Answers.[2].option}}">
+						<span>{{this.data.Answers.[2].option}}</span>
+						<div class="progress" style="display: none">
+								<div class="determinate result3" ></div>
+							</div><br>
+						{{/if}}
+						{{#if this.data.Answers.[3].option}}
+					<input class="radio-button" type="radio" pollId="{{this.data.Answers.[3].PollId}}" optid="{{this.data.Answers.[3].id}}" name="option" value="{{this.data.Answers.[3].option}}">
+						<span>{{this.data.Answers.[3].option}}</span><div class="progress" style="display: none">
+								<div class="determinate result4" ></div>
+							</div><br>
+						{{/if}}
+				</form> 
+			</div>
+			<button type="submit" class="btn vote-button">Vote</button>
+			<div class="total-votes">
+				<i class="small material-icons">insert_chart</i>
+				<div class="vote-counter"></div>
 			</div>
 		</div>
 		{{!-- CHART ENDS --}}

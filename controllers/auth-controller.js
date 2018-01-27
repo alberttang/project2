@@ -32,7 +32,8 @@ exports.signup = function (req, res) {
             newUser.password = hashedPassword
             newUser.save()
                 .then(() => {
-                    res.send({ message: 'success' })
+                    // res.send({ message: 'success' })
+                    return res.redirect('/');
                 })
                 .catch(err => {
                     res.status(400).send({ message: 'could not sign you up, try again later' })

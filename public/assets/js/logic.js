@@ -6,118 +6,11 @@ $('.vote-button').click(function () {
     votes++;
     $('.vote-counter').html(votes);
     console.log(votes);
-})
-
-// trying to figure out how to remove login form on page load
-
-function populatePoll(question, category, option1) {
-    // $( ".test-span" ).append( "<p>Test</p>" );
-    // var per = "personal"
-    var per = category;
-    var personlOptions = $("#" + per);
-    var personalInput = $("<input type='radio' name='option'> ");
-    var perSpan = $("<span>");
-    personalInput.attr("value", option1);
-    perSpan.html(option1);
-    personlOptions.append(personalInput);
-    personalInput.after(perSpan);
-    var ques1 = $("." + per + "-question");
-    ques1.html(question);
-
-    console.log(option1);
-    console.log(category);
-    console.log(question);
-
-
-};
-
-
-$(document).ready(function () {
-
-    axios.get('/api/poll-category-search/personal')
-        .then(function (response) {
-            console.log(response.data);
-            var parQues = response.data[0].question;
-            // var parOpt1 = response.data[0].Answers[0].option;
-            // var parOpt2 = response.data[0].Answers[1].option;
-            // var parOpt3 = response.data[0].Answers[2].option;
-            // //   var parOpt4 =response.data[0].Answers[3].option;
-            console.log(response.data[0].Answers.length);
-            for ( i = 0; i < response.data[0].Answers.length; i++){
-                populatePoll(parQues, "personal", response.data[0].Answers[i].option);                
-            }           
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-
-        axios.get('/api/poll-category-search/entertainment')
-        .then(function (response) {
-            console.log(response.data);
-            var parQues = response.data[0].question;
-            // var parOpt1 = response.data[0].Answers[0].option;
-            // var parOpt2 = response.data[0].Answers[1].option;
-            // var parOpt3 = response.data[0].Answers[2].option;
-            // //   var parOpt4 =response.data[0].Answers[3].option;
-            console.log(response.data[0].Answers.length);
-            for ( i = 0; i < response.data[0].Answers.length; i++){
-                populatePoll(parQues, "entertainment", response.data[0].Answers[i].option);                
-            }           
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-        axios.get('/api/poll-category-search/science')
-        .then(function (response) {
-            console.log(response.data);
-            var parQues = response.data[0].question;
-            // var parOpt1 = response.data[0].Answers[0].option;
-            // var parOpt2 = response.data[0].Answers[1].option;
-            // var parOpt3 = response.data[0].Answers[2].option;
-            // //   var parOpt4 =response.data[0].Answers[3].option;
-            console.log(response.data[0].Answers.length);
-            for ( i = 0; i < response.data[0].Answers.length; i++){
-                populatePoll(parQues, "science", response.data[0].Answers[i].option);                
-            }           
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-        axios.get('/api/poll-category-search/philosophy')
-        .then(function (response) {
-            console.log(response.data);
-            var parQues = response.data[0].question;
-            // var parOpt1 = response.data[0].Answers[0].option;
-            // var parOpt2 = response.data[0].Answers[1].option;
-            // var parOpt3 = response.data[0].Answers[2].option;
-            // //   var parOpt4 =response.data[0].Answers[3].option;
-            console.log(response.data[0].Answers.length);
-            for ( i = 0; i < response.data[0].Answers.length; i++){
-                populatePoll(parQues, "philosophy", response.data[0].Answers[i].option);                
-            }           
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-        axios.get('/api/poll-category-search/world')
-        .then(function (response) {
-            console.log(response.data);
-            var parQues = response.data[0].question;
-            // var parOpt1 = response.data[0].Answers[0].option;
-            // var parOpt2 = response.data[0].Answers[1].option;
-            // var parOpt3 = response.data[0].Answers[2].option;
-            // //   var parOpt4 =response.data[0].Answers[3].option;
-            console.log(response.data[0].Answers.length);
-            for ( i = 0; i < response.data[0].Answers.length; i++){
-                populatePoll(parQues, "world", response.data[0].Answers[i].option);                
-            }           
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-
 });
 
+///////////////////////////////////////////////////////////////////////
+//FUNCTION FOR LOGIN//////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
 $(function () {
     $(".login").on("click", function (event) {
         event.preventDefault();
@@ -148,9 +41,14 @@ $(function () {
             }
 
         });
-    })
-})
+    });
+});
 
+
+
+//////////////////////////////////////////////////////////////////////////
+//FUNCTION TO CREATE A POLL AND POST TO SQL////////
+/////////////////////////////////////////////////////////////////////////
 $(function () {
     $(".create-poll").on("click", function (event) {
 
@@ -232,8 +130,104 @@ $(function () {
     });
 });
 
+function hideStuff() {
+    var radioButton = $(".radio-button");
+    radioButton.hide();
+    var progressBar = $(".progress");
+    progressBar.show();
+    $(".vote-button").hide();
+}
+
+function showProgress(result,width){
+    var result1 = $("."+result);
+    var widthPer = "width:"+width+"%";
+    result1.attr("style",widthPer);
+    
+}
+
+    
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//FUNCTION TO POST VOTE TO RESPONSES TABLE /////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+$(function () {
+    $(".vote-button").on("click", function (event) {
+        hideStuff();
+        var radioValue = $("input[name='option']:checked").val();
+        if (!radioValue) {
+            alert("Please Select an Answer");
+        } else {
+            console.log(radioValue);
+            var pollId = $("input[name='option']:checked").attr("pollId");
+            var ansID = $("input[name='option']:checked").attr("optid");
+            var userID = $("input[name='option']:checked").attr("pollId");
+            var newResponse = {
+                "answerId": ansID,
+                "PollId": pollId,
+                "UserId": sessionStorage.userId
+            };
+            console.log(newResponse);
+
+            axios.post('/api/response', newResponse, { headers: { Authorization: sessionStorage.jwt } })
+                    .then(function (response) {
+                        // var pollID = response.data[0].PollId;
+                        // console.log("The Poll ID is : " + pollID);
+                        console.log(response);
+                        // window.location.replace('/api/poll/' + pollID);
+                        axios.get('/api/response-count/'+response.data.PollId)
+                                .then(function (response) {
+                                    console.log(response);
+                                    console.log(response.data[0]['COUNT(*)']);
+                             var options = [];
+                                    
+                            for ( i = 0; i < response.data.length; i++){
+                                options[i] = response.data[i]['COUNT(*)']
+                            }
+                            console.log(options);
+                            var opTotal = 0
+                            for ( i=0; i < options.length; i++){
+                                opTotal += options[i]
+                            }
+                            console.log(opTotal);
+
+                            var num1 = Math.round(((options[0]/opTotal) * 100)); 
+                            showProgress("result1",num1);                            
+                            var num2 = Math.round(((options[1]/opTotal)* 100));
+                            showProgress("result2",num2);                            
+                            var num3 = "";
+                            var num4 = "";
+                            if(typeof options[2] != "undefined"){
+                                  num3 = Math.round(((options[2]/opTotal)* 100)); 
+                                  showProgress("result3",num3);
+                                  
+                            }
+                            if(typeof options[3] != "undefined"){
+                                 num4 = Math.round(((options[3]/opTotal)* 100));
+                                 showProgress("result4",num4);
+                                 
+                            }
+
+                            console.log(num1,num2,num3,num4);
 
 
+                                });
+
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+
+            }
+
+        });
+    });
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// FUNCTION TO CHECK IF USER IS SIGNED IN BEFORE VIEWING MY POLLS
+/////////////////////////////////////////////////////////////////////////////////////////////////
 $(function () {
     $(".my-polls").on("click", function (event) {
 
@@ -258,3 +252,7 @@ $(function () {
 
     });
 });
+////////////////////////////////////////////////////////////////////////////////////////////////
+// FUNCTION FOR DISPLAYING THE RESULTS////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
