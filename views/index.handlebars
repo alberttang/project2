@@ -1,13 +1,13 @@
-<!-- particles.js container --> 
-	<div id="particles-js"></div> 
-	<!-- stats - count particles --> 
-	<div class="count-particles"> 
-		<span class="js-count-particles">--</span> particles 
-	</div> 
-	<!-- particles.js lib - https://github.com/VincentGarreau/particles.js --> 
-	<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-	<!-- stats.js lib --> 
-	<script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+<!-- particles.js container -->
+<div id="particles-js"></div>
+<!-- stats - count particles -->
+<div class="count-particles">
+	<span class="js-count-particles">--</span> particles
+</div>
+<!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<!-- stats.js lib -->
+<script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
 
 	<div class="header">
 		<div class="block-alpha">
@@ -35,64 +35,128 @@
 				<button id="my-polls_top" class="btn my-polls">My Polls</button>
 			</a>
 		</div>
+		<a href="/my-polls">
+			<button class="btn my-polls">My Polls</button>
+		</a>
 	</div>
+</div>
 
 	<div class="main">
 		<div class="home-container">
 			<div class="next mobile">Next</div>
 			<div class="prev mobile">Prev</div>
 		<div class="carousel">
-				<div class="item a">
-					<h5 class="poll-category">
-						<a href="/api/poll-cat/popular">Popular/Trending</a>
-					</h5>
-					<div class="poll">
-						<div class="poll-question">What is Harambe's favorite food?</div>
-						<div class="poll-answer">
-							<form>
-								<input type="radio" name="option" value="">
-									<span>Bananas</span>
-								<input type="radio" name="option" value="">
-									<span>Fresh meat</span><br>
-								<input type="radio" name="option" value=""> 
-									<span>Small children</span>
-								<input type="radio" name="option" value="">
-									<span>Slightly larger children</span>
-							</form> 
-						</div>
-						<button type="submit" class="btn vote-button">Vote</button>
-						<div class="total-votes">
-							<i class="small material-icons">insert_chart</i>
-							<div class="vote-counter"></div>
-						</div>
+			<div class="item a">
+				<h5 class="poll-category">
+					<a href="/api/poll-cat/popular">Popular/Trending</a>
+				</h5>
+				<div class="poll">
+					<div class="poll-question">What is Harambe's favorite food?</div>
+					<div class="poll-answer">
+						<form>
+							<input type="radio" name="option" value="">
+							<span>Bananas</span>
+							<input type="radio" name="option" value="">
+							<span>Fresh meat</span>
+							<br>
+							<input type="radio" name="option" value="">
+							<span>Small children</span>
+							<input type="radio" name="option" value="">
+							<span>Slightly larger children</span>
+						</form>
+					</div>
+					<button type="submit" class="btn vote-button">Vote</button>
+					<div class="total-votes">
+						<i class="small material-icons">insert_chart</i>
+						<div class="vote-counter"></div>
 					</div>
 				</div>
-				<div class="item b">
-					<h5 class="poll-category">
-						<a href="/api/poll-cat/entertainment">Entertainment</a>
-					</h5>
+			</div>
+			<div class="item b">
+				<h5 class="poll-category">
+					<a href="/api/poll-cat/entertainment">Entertainment</a>
+				</h5>
+				<div class="poll">
+					<div class="poll-question entertainment-question"></div>
+					<div class="poll-answer">
+						<form id="entertainment">
+						</form>
+					</div>
+					<button type="submit" class="btn vote-button">Vote</button>
+					<div class="total-votes">
+						<i class="small material-icons">insert_chart</i>
+						<div class="vote-counter"></div>
+					</div>
 				</div>
-				<div class="item c">
-					<h5 class="poll-category">
-						<a href="/api/poll-cat/personal">Personal</a>
-					</h5>
+			</div>
+			<div class="item c">
+				<h5 class="poll-category">
+					<a href="/api/poll-cat/personal">Personal</a>
+				</h5>
+				<div class="poll">
+					<div class="poll-question personal-question"></div>
+					<div class="poll-answer">
+						<form id="personal">
+						</form>
+					</div>
+					<button type="submit" class="btn vote-button">Vote</button>
+					<div class="total-votes">
+						<i class="small material-icons">insert_chart</i>
+						<div class="vote-counter"></div>
+					</div>
 				</div>
-				<div class="item d">
-					<h5 class="poll-category">
-						<a href="/api/poll-cat/science">Science</a>
-					</h5>
+			</div>
+			<div class="item d">
+				<h5 class="poll-category">
+					<a href="/api/poll-cat/science">Science</a>
+				</h5>
+				<div class="poll">
+					<div class="poll-question science-question"></div>
+					<div class="poll-answer">
+						<form id="science">
+						</form>
+					</div>
+					<button type="submit" class="btn vote-button">Vote</button>
+					<div class="total-votes">
+						<i class="small material-icons">insert_chart</i>
+						<div class="vote-counter"></div>
+					</div>
 				</div>
-				<div class="item e">
-					<h5 class="poll-category">
-						<a href="/api/poll-cat/philosophy">Philosophy</a>
-					</h5>
+			</div>
+			<div class="item e">
+				<h5 class="poll-category">
+					<a href="/api/poll-cat/philosophy">Philosophy</a>
+				</h5>
+				<div class="poll">
+					<div class="poll-question philosophy-question"></div>
+					<div class="poll-answer">
+						<form id="philosophy">
+						</form>
+					</div>
+					<button type="submit" class="btn vote-button">Vote</button>
+					<div class="total-votes">
+						<i class="small material-icons">insert_chart</i>
+						<div class="vote-counter"></div>
+					</div>
 				</div>
-				<div class="item f">
-					<h5 class="poll-category">
-						<a href="/api/poll-cat/world">World</a>
-					</h5>
+			</div>
+			<div class="item f">
+				<h5 class="poll-category">
+					<a href="/api/poll-cat/world">World</a>
+				</h5>
+				<div class="poll">
+					<div class="poll-question world-question"></div>
+					<div class="poll-answer">
+						<form id="world">
+						</form>
+					</div>
+					<button type="submit" class="btn vote-button">Vote</button>
+					<div class="total-votes">
+						<i class="small material-icons">insert_chart</i>
+						<div class="vote-counter"></div>
+					</div>
 				</div>
-		</div>
+			</div>
 		</div>
 	</div>
 <div class="next desktop">Next</div>
@@ -107,4 +171,3 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-

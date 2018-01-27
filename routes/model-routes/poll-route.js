@@ -100,13 +100,33 @@ module.exports = function (app) {
         });
     }); // END GET
 
+
+    app.get("/api/poll-category-search/:id", function (req, res) {
+        // CONSOLE LOG THE REQUEST BODY
+        console.log(req.body);
+        // GET THE USER MODEL 
+        db.Poll.findAll({
+            // FIND WHERE THE USERNAME IS THE SAME AS REQ.BODY
+            include: [db.Answer],
+            where: {
+                category: req.params.id
+            }
+        }).then(function (dbAuthor) {
+            // console.log(dbAuthor.data);            
+            res.json(dbAuthor);
+            // res.render("popular", {
+            //     data: dbAuthor })
+
+        });
+    }); // END GET
+
     // GET ALL POLL INFO
     app.get("/api/poll", function (req, res) {
         // CONSOLE LOG THE REQUEST BODY
         console.log(req.body);
         // GET ALL POLLS
         db.Poll.findAll({
-            include: [db.Answer]
+            include: [db.Answer, db.User],      
         }).then(function (dbAuthor) {
             res.json(dbAuthor);
         });
