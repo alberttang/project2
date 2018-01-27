@@ -181,6 +181,33 @@ button.btn.login {height: 18px !important; font-size: 1em; line-height: 1.5em;}
 .js-plotly-plot .plotly .modebar {display: none;}
 
 
+@media (min-width: 767px) {
+
+  .desktop {display: block;}
+  .mobile {display: none;}
+
+}
+
+@media (max-width: 767px) {
+
+  .desktop {display: none;}
+  .mobile {display: block;}
+
+  .main {padding: 0;}
+
+  .next.mobile, .prev.mobile {position: relative; width: 25%; display: inline;}
+  .next.mobile {right: 0 !important;}
+  .prev.mobile {left: 10em !important;}
+  .carousel {margin: 50% 0;}
+
+  .header .block-alpha, .header .block-beta, .header .block-omega {width: 100%; margin: 5% 0;}
+  .log-form {margin: 0 auto;}
+
+  /* .next, .prev {position: relative; width: 25%; margin: 5%; text-align: center; top: 0px;} */
+
+}
+
+
 .log-form {
   min-width: 320px;
   max-width: 475px;
