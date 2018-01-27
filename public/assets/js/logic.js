@@ -50,7 +50,7 @@ $(function () {
 //FUNCTION TO CREATE A POLL AND POST TO SQL////////
 /////////////////////////////////////////////////////////////////////////
 $(function () {
-    $(".create-poll").on("click", function (event) {
+    $(".create-newpoll").on("click", function (event) {
 
         var radioValue = $("input[name='option']:checked").val();
         if (!radioValue) {
@@ -245,7 +245,7 @@ $(function () {
     $(".create-poll").on("click", function (event) {
 
         if (sessionStorage.userId) {
-            window.location.replace('/api/poll/' + sessionStorage.userId);
+            window.location.replace("/create-poll");
         } else {
             window.location.replace('/signup/');
         };

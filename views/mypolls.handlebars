@@ -42,11 +42,12 @@
 	<div name="polls" class="container">
         <h3 class="category-title">{{category}}</h3>
         <div class="poll">
-			<div name="pollhack" style="display:none">{{id}}</div>
-			<div class="poll-question" pid="{{id}}">
-				{{question}}
-			</div>
-			<div class="poll-answer">
+			{{!-- <div name="pollhack" style="display:none">{{id}}</div> --}}
+			<a href="/api/poll/{{id}}" ><div class="poll-question" pid="{{id}}">
+
+                {{question}}
+            </div></a>
+			{{!-- <div class="poll-answer">
 				<form>
 					{{#Answers}}
 					<input type="radio" pollId="{{PollId}}" optid="{{id}}" name="option" value="{{option}}">
@@ -62,7 +63,7 @@
 			{{!-- CHART BEGINS --}}
 			<div class="results">
 				 <div id="{{id}}"><!-- Plotly chart will be drawn inside this DIV --></div>
-			</div>
+			</div> --}}
 			{{!-- CHART ENDS --}}
 		</div>
     </div>

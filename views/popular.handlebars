@@ -41,10 +41,11 @@
 	<div class="container">
         <h3 class="category-title">{{category}}</h3>
         <div class="poll">
-			<div class="poll-question">
+			<a href="/api/poll/{{id}}" ><div class="poll-question" pid="{{id}}">
+
 				{{question}}
-			</div>
-			<div class="poll-answer">
+			</div></a>
+			{{!-- <div class="poll-answer">
 				<form>
 					{{#Answers}}
 					<input type="radio" pollId="{{PollId}}" optid="{{id}}" name="option" value="{{option}}">
@@ -52,13 +53,17 @@
 						{{/Answers}}
 			
 				</form> 
-			</div>
-			<button type="submit" class="btn vote-button">Vote</button>
+			</div> --}}
+			{{!-- <button type="submit" class="btn vote-button">Vote</button>
 			<div class="total-votes">
 				<i class="small material-icons">insert_chart</i>
 				<div class="vote-counter"></div>
+<<<<<<< HEAD
 			</div>
 			{{!-- CHART ENDS --}}
+=======
+			</div> --}}
+>>>>>>> 93776b77e78d75bf6073ccc87bf5134f365ecc85
 		</div>
 	</div>
 </div>

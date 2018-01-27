@@ -15,10 +15,10 @@ function populatePoll(question, category, option1, pID, oID) {
     personalInput.attr("pollId", pID);
     personalInput.attr("optid", oID);
     perSpan.html(option1);
-    personlOptions.append(personalInput);
-    personalInput.after(perSpan);
+    // personlOptions.append(personalInput);
+    // personalInput.after(perSpan);
     var ques1 = $("." + per + "-question");
-    ques1.html(question);
+    ques1.html(`<a href="/api/poll/${pID}">${question}<a>`);
     ques1.attr("pollId",pID);
     console.log(option1);
     console.log(category);
