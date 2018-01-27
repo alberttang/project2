@@ -35,78 +35,15 @@
 		</div>
 	</div>
 
-	<div class="main">
-		<div class="home-container">
-		<div class="carousel">
-				<div class="item a">
-					<h5 class="poll-category">
-						<a href="/api/poll-cat/popular">Popular/Trending</a>
-					</h5>
-					<div class="poll">
-						<div class="poll-question">What is Harambe's favorite food?</div>
-						<div class="poll-answer">
-							<form>
-								<input type="radio" name="option" value="">
-									<span>Bananas</span>
-								<input type="radio" name="option" value="">
-									<span>Fresh meat</span><br>
-								<input type="radio" name="option" value=""> 
-									<span>Small children</span>
-								<input type="radio" name="option" value="">
-									<span>Slightly larger children</span>
-							</form> 
-						</div>
-						<button type="submit" class="btn vote-button">Vote</button>
-						<div class="total-votes">
-							<i class="small material-icons">insert_chart</i>
-							<div class="vote-counter"></div>
-						</div>
-					</div>
-				</div>
-				<div class="item b">
-					<h5 class="poll-category">
-						<a href="/api/poll-cat/entertainment">Entertainment</a>
-					</h5>
-				</div>
-				<div class="item c">
-					<h5 class="poll-category">
-						<a href="/api/poll-cat/personal">Personal</a>
-					</h5>
-				</div>
-				<div class="item d">
-					<h5 class="poll-category">
-						<a href="/api/poll-cat/science">Science</a>
-					</h5>
-				</div>
-				<div class="item e">
-					<h5 class="poll-category">
-						<a href="/api/poll-cat/philosophy">Philosophy</a>
-					</h5>
-				</div>
-				<div class="item f">
-					<h5 class="poll-category">
-						<a href="/api/poll-cat/world">World</a>
-					</h5>
-				</div>
-		</div>
-		</div>
-	</div>
-<div class="next">Next</div>
-<div class="prev">Prev</div>
-</div>
-<div class="next">Next</div>
-<div class="prev">Prev</div>
 
-<div></div>
-<a href="#">
-	<button class="btn my-polls">My Polls</button>
-</a>
-</div>
+<script type="text/javascript">
+    document.getElementById('signup').style.display='block';
+</script>
+
 
 {{!-- /* Signup form */ --}}
 
 <div id="signup" class="modal">
-  <span onclick="document.getElementById('signup').style.display='none'" class="close" title="Close Modal">&times;</span>
   <form class="modal-content" method="post" action="/api/auth/signup">
     <div class="container">
       <h1>Sign Up</h1>
@@ -139,16 +76,7 @@
 </div>
 
 <script>
-// Get the modal
-var modal = document.getElementById('signup');
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
 
 
 
