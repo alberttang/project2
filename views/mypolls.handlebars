@@ -38,33 +38,31 @@
 		</div>
 	</div>
 
+[]
 {{#each this.data}}
-	<div name="polls" class="container">
+    <div class="container">
         <h3 class="category-title">{{category}}</h3>
         <div class="poll">
-			{{!-- <div name="pollhack" style="display:none">{{id}}</div> --}}
-			<a href="/api/poll/{{id}}" ><div class="poll-question" pid="{{id}}">
+            <a href="/api/poll/{{id}}" ><div class="poll-question" pid="{{id}}">
 
                 {{question}}
             </div></a>
-			{{!-- <div class="poll-answer">
-				<form>
-					{{#Answers}}
-					<input type="radio" pollId="{{PollId}}" optid="{{id}}" name="option" value="{{option}}">
-						<span>{{option}}</span>
-						{{/Answers}}
-				</form> 
-			</div>
-			<button type="submit" class="btn vote-button">Vote</button>
-			<div class="total-votes">
-				<i class="small material-icons">insert_chart</i>
-				<div class="vote-counter"></div>
-			</div>
-			{{!-- CHART BEGINS --}}
-			<div class="results">
-				 <div id="{{id}}"><!-- Plotly chart will be drawn inside this DIV --></div>
-			</div> --}}
-			{{!-- CHART ENDS --}}
-		</div>
+            {{!-- <div class="poll-answer">
+                <form>
+                    {{#Answers}}
+                    <input type="radio" pollId="{{PollId}}" optid="{{id}}" name="option" value="{{option}}">
+                        <span>{{option}}</span>
+                        {{/Answers}}
+                </form> 
+            </div>
+            <button type="submit" class="btn vote-button">Vote</button>
+            <div class="total-votes">
+                <i class="small material-icons">insert_chart</i>
+                <div class="vote-counter"></div>
+            </div>
+            <div class="results">
+                 <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+            </div> --}}
+        </div>
     </div>
-					{{/each}}
+                    {{/each}}
