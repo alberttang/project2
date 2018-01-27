@@ -1,6 +1,9 @@
+// USER AUTHENTICATION CONTROLLER
+var authCont = require('../../controllers/auth-controller.js')
+
 // REQUIRE THE MODELS FOLDER
 var db = require("../../models");
-var authCont = require('../../controllers/auth-controller.js')
+
 
 // EXPORT THESE ROUTES 
 module.exports = function (app) {
@@ -10,7 +13,7 @@ module.exports = function (app) {
     */
 
     // POST THE NEW RESPONSE TO THE DB
-    app.post("/api/response",  function (req, res) {
+    app.post("/api/response", function (req, res) {
         console.log("your route is working!")
         // CONSOLE LOG THE REQUEST BODY
         console.log(req.body);
@@ -49,37 +52,16 @@ module.exports = function (app) {
         });
     }); // END GET
 
-
     // GET THE POLL INFO
     app.get("/api/response-count/:id", function (req, res) {
         // CONSOLE LOG THE REQUEST BODY
         console.log(req.body);
         // GET THE USER MODEL 
-       
+
         // db.sequelize.query(“select * from sometable;);
-        db.sequelize.query("SELECT Answers.num, COUNT(*) FROM Answers JOIN Responses ON Answers.id = Responses.answerId AND Answers.PollId="+req.params.id+" GROUP BY Answers.num", { type: db.sequelize.QueryTypes.SELECT})
-        .then(function (dbAuthor) {
+        db.sequelize.query("SELECT Answers.num, COUNT(*) FROM Answers JOIN Responses ON Answers.id = Responses.answerId AND Answers.PollId=" + req.params.id + " GROUP BY Answers.num", { type: db.sequelize.QueryTypes.SELECT })
+            .then(function (dbAuthor) {
                 res.json(dbAuthor);
             });
     }); // END GET 
-
-    /*
-        ================= DELETE ==================== 
-    */
-
-    // // DELETE route for deleting responses
-    // app.delete("/api/response/:id", function (req, res) {
-    //     // CONSOLE LOG RTHE REQUEST OBJ
-    //     console.log(req.body);
-    //     // DELETE THE ID IN THE DB
-    //     db.Response.destroy({
-    //             where: {
-    //                 id: req.params.id
-    //             }
-    //         })
-    //         .then(function (dbPost) {
-    //             res.json(dbPost);
-    //         });
-    // }); // END DELETE
-
 }; // END EXPORT

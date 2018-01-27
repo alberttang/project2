@@ -1,5 +1,29 @@
+// $(document).ready(function () {
+//   $.get("/api/")
+//   $.get("/api/response-count/:id", function (data, status) {
+//     alert("Data: " + data + "\nStatus: " + status);
+//   });
+// });
+
+
+console.log(this.data)
+
+var a = document.getElementsByName('polls')
+console.log(a)
+
+
+
+
+
+
+
+
+
+
+
+
 var data = [{
-  values: [19, 26, 55],
+  values: [response[0].count, response[1].count, response[2].count],
   labels: ['1', '2', '3'],
   type: 'pie'
 }];
